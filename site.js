@@ -1,3 +1,10 @@
+
+/* Williams III universal master mark */
+document.querySelectorAll('img[src*="master.svg"]').forEach(function(img){
+  var src=img.getAttribute("src")||"";
+  img.setAttribute("src",src.replace("master.svg","williams iii master mark.png"));
+  img.setAttribute("alt","Williams III");
+});
 document.querySelectorAll("[data-year]").forEach(function(e){e.textContent=new Date().getFullYear();});
 document.querySelectorAll("[data-timeline]").forEach(function(root){
   var buttons=Array.from(root.querySelectorAll("[data-tab]"));
