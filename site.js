@@ -28,24 +28,45 @@ document.querySelectorAll("[data-timeline]").forEach(function(root){
   menu.setAttribute("href","#");
   menu.setAttribute("aria-haspopup","dialog");
   menu.setAttribute("aria-expanded","false");
+
   var overlay=document.createElement("div");
   overlay.className="explore-overlay";
   overlay.setAttribute("role","dialog");
   overlay.setAttribute("aria-modal","true");
   overlay.setAttribute("aria-label","Explore Williams III");
-  overlay.innerHTML='<button class="explore-close" type="button">Menu</button><div class="explore-inner"><nav class="explore-primary"><a href="../../">Williams III</a><a href="../../family-office/">Family Office</a><a href="../../family-holdings/">Family Holdings</a><a href="../../companies/">Companies</a></nav><nav class="explore-secondary"><a href="../../story/">Our Story</a><a href="../../leadership/">Leadership</a><a href="../../principles/">Principles</a><a href="../../digital-estate/">Digital Estate</a><a href="../../contact/">Contact</a><a href="../../private-access/">Private Access</a></nav></div>';
+  overlay.innerHTML='<div class="explore-inner"><nav class="explore-primary"><a href="../../">Williams III</a><a href="../../family-office/">Family Office</a><a href="../../family-holdings/">Family Holdings</a><a href="../../companies/">Companies</a></nav><nav class="explore-secondary"><a href="../../story/">Our Story</a><a href="../../leadership/">Leadership</a><a href="../../principles/">Principles</a><a href="../../digital-estate/">Digital Estate</a><a href="../../contact/">Contact</a><a href="../../private-access/">Private Access</a></nav></div>';
   document.body.appendChild(overlay);
+
   function normalizeLinks(){
     var depth=location.pathname.split("/").filter(Boolean).length;
     var base=depth>=2?"../../":depth===1?"../":"";
-    overlay.querySelectorAll("a").forEach(function(a){var href=a.getAttribute("href");a.setAttribute("href",href.replace("../../",base));});
+    overlay.querySelectorAll("a").forEach(function(a){
+      var href=a.getAttribute("href");
+      a.setAttribute("href",href.replace("../../",base));
+    });
   }
   normalizeLinks();
-  var close=overlay.querySelector(".explore-close");
-  function openMenu(){overlay.classList.add("open");document.body.classList.add("menu-open");menu.setAttribute("aria-expanded","true");close.focus();}
-  function closeMenu(){overlay.classList.remove("open");document.body.classList.remove("menu-open");menu.setAttribute("aria-expanded","false");menu.focus();}
-  menu.addEventListener("click",function(e){e.preventDefault();openMenu();});
-  close.addEventListener("click",closeMenu);
-  overlay.addEventListener("click",function(e){if(e.target===overlay)closeMenu();});
-  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&overlay.classList.contains("open"))closeMenu();});
+
+  function setOpen(open){
+    overlay.classList.toggle("open",open);
+    document.body.classList.toggle("menu-open",open);
+    menu.setAttribute("aria-expanded",open?"true":"false");
+    menu.classList.toggle("is-open",open);
+  }
+
+  menu.addEventListener("click",function(e){
+    e.preventDefault();
+    setOpen(!overlay.classList.contains("open"));
+  });
+
+  overlay.addEventListener("click",function(e){
+    if(e.target===overlay)setOpen(false);
+  });
+
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"&&overlay.classList.contains("open")){
+      setOpen(false);
+      menu.focus();
+    }
+  });
 })();
