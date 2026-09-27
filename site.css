@@ -63,3 +63,17 @@
   .timeline-pane{padding:42px 8px}
   .timeline-visual{height:270px;padding:24px}
 }
+/* --- Leadership editorial layout --- */
+.leadership-head{width:min(1040px,calc(100% - 120px));margin:0 auto;padding:78px 0 58px;border-bottom:1px solid var(--line);text-align:left}
+.leadership-head .eyebrow{color:var(--gold);margin-bottom:18px}
+.leadership-head h1{font:400 clamp(48px,5.7vw,76px)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:var(--navy);max-width:800px;margin:0}
+.leadership-head p{font-size:17px;line-height:1.7;color:var(--muted);max-width:650px;margin:26px 0 0}
+.leadership-profile{width:min(1040px,calc(100% - 120px));margin:0 auto;padding:68px 0 92px;display:grid;grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr);gap:78px;align-items:center}
+.leadership-portrait{height:500px;background:linear-gradient(180deg,#f4f4f2 0%,#eceae5 100%);overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.leadership-portrait img{width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:grayscale(1) contrast(1.04)}
+.leadership-copy{max-width:520px}
+.leadership-copy .eyebrow{color:var(--navy);margin-bottom:16px}
+.leadership-copy h2{font:400 clamp(38px,4.2vw,56px)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.035em;color:var(--navy);margin:0 0 26px}
+.leadership-copy p{font-size:16px;line-height:1.76;color:var(--muted);margin:0 0 18px}
+@media(max-width:900px){.leadership-head,.leadership-profile{width:min(100% - 44px,1040px)}.leadership-profile{grid-template-columns:1fr;gap:38px}.leadership-portrait{height:430px}.leadership-copy{max-width:none}}
+@media(max-width:560px){.leadership-head{padding:48px 0 38px}.leadership-head h1{font-size:46px}.leadership-head p{font-size:16px}.leadership-profile{padding:44px 0 64px}.leadership-portrait{height:350px}.leadership-copy h2{font-size:40px}}
