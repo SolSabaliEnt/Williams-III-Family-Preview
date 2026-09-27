@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0A315D">
+<meta name="description" content="Williams III — a family enterprise for proprietary ventures, strategic ownership interests, digital assets, and long-term stewardship.">
+<title>Williams III</title>
+<style>
+:root{--navy:#0A315D;--dark:#05172B;--gold:#B99857;--gold-soft:#E3C98E;--ivory:#F7F4ED;--ink:#171A1D;--muted:#676B68;--line:#D8D5CF}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.main{margin-left:94px}
+.rail{position:fixed;inset:0 auto 0 0;width:94px;background:var(--navy);color:white;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:26px 14px 24px;border-right:1px solid rgba(255,255,255,.08)}.rail-mark{width:64px;height:64px;border:1px solid rgba(255,255,255,.62);display:grid;place-items:center;padding:7px}.rail-mark img{width:100%;height:100%;object-fit:contain}.rail-center{display:flex;flex-direction:column;gap:10px;align-items:center;cursor:pointer}.menu-icon{width:22px;height:14px;display:grid;gap:5px}.menu-icon span{height:1px;background:white}.menu-label{font-size:9px;font-weight:750;letter-spacing:.18em;text-transform:uppercase}.rail-bottom{writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.section{padding:112px clamp(28px,7vw,112px)}.kicker{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}.display{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.045em;line-height:.96}
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(135deg,#07192F 0%,#0D315C 58%,#07192F 100%);color:white}.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,20,39,.84) 0%,rgba(5,20,39,.58) 35%,rgba(5,20,39,.16) 72%,rgba(5,20,39,.42) 100%),linear-gradient(0deg,rgba(5,20,39,.42),rgba(5,20,39,.18))}.hero-inner{position:relative;z-index:2;width:min(1240px,100%);padding:clamp(50px,9vw,118px);padding-bottom:88px}.hero-copy-shell{display:inline-block;max-width:min(980px,100%);padding:clamp(22px,2vw,28px) clamp(18px,2vw,26px) clamp(18px,2vw,24px) 0;background:linear-gradient(90deg,rgba(2,9,18,.46) 0%,rgba(2,9,18,.24) 65%,rgba(2,9,18,0) 100%);border-left:1px solid rgba(227,201,142,.36)}.hero .kicker{color:var(--gold-soft)}.hero h1{font-size:clamp(62px,9vw,132px);max-width:980px;text-shadow:0 10px 34px rgba(0,0,0,.28)}.hero p{max-width:650px;margin:28px 0 0;font-size:clamp(17px,2vw,24px);line-height:1.45;color:rgba(255,255,255,.88);text-shadow:0 8px 24px rgba(0,0,0,.22)}.hero-actions{margin-top:42px;display:flex;flex-wrap:wrap;gap:14px}.btn{min-height:48px;padding:0 20px;border:1px solid rgba(255,255,255,.62);background:transparent;color:white;display:inline-flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.12em;font-weight:800;text-transform:uppercase;cursor:pointer;transition:.25s ease}.btn:hover{background:white;color:var(--navy)}.btn.dark{border-color:var(--navy);color:var(--navy)}.btn.dark:hover{background:var(--navy);color:white}.scroll{position:absolute;right:36px;bottom:34px;z-index:3;font-size:9px;letter-spacing:.18em;text-transform:uppercase;writing-mode:vertical-rl;opacity:.72}
+.intro{background:var(--ivory)}.intro-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px}.intro-head h2{font-size:clamp(48px,6vw,86px);color:var(--navy)}.intro-head p{font-size:18px;line-height:1.7;color:#5E625F;max-width:620px}.entrances{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.entrance{min-height:520px;padding:48px;position:relative;cursor:pointer;transition:background .3s ease,color .3s ease}.entrance:first-child{border-right:1px solid var(--line)}.entrance:hover{background:var(--navy);color:white}.entrance-num{font:400 13px Georgia,serif;color:var(--gold);margin-bottom:12px}.entrance-brand{margin:12px 0 28px;min-height:230px;display:flex;align-items:center;justify-content:center}.entrance-brand img{width:min(520px,100%);height:210px;object-fit:contain;object-position:center center;transition:transform .35s ease}.entrance:hover .entrance-brand img{transform:scale(1.035)}.entrance p{max-width:560px;line-height:1.65;opacity:.76;font-size:16px}.entrance-link{position:absolute;left:48px;bottom:42px;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.portfolio{background:white}.portfolio-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:38px}.portfolio-head h2{color:var(--navy);font-size:clamp(48px,6vw,84px)}.portfolio-head p{max-width:540px;color:#6A6D6B;line-height:1.65}.company-stage{position:relative;min-height:560px;background:#111;color:white;overflow:hidden;display:flex;align-items:flex-end}.company-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}.company-stage:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,10,19,.88) 0%,rgba(4,10,19,.66) 32%,rgba(4,10,19,.18) 64%,rgba(4,10,19,.48) 100%),linear-gradient(0deg,rgba(0,0,0,.22),rgba(0,0,0,.22))}.company-fallback{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 75% 30%,#626C75 0%,#323941 32%,#151A20 72%)}.company-fallback span{font:400 clamp(160px,26vw,410px)/1 Georgia,serif;color:rgba(255,255,255,.09);letter-spacing:-.08em}.stage-copy{position:relative;z-index:2;padding:clamp(34px,5vw,64px);width:100%;display:flex;justify-content:space-between;align-items:end;gap:30px}.stage-panel{max-width:min(620px,100%);padding:clamp(22px,3vw,28px);background:linear-gradient(90deg,rgba(4,10,19,.58) 0%,rgba(4,10,19,.38) 78%,rgba(4,10,19,.08) 100%);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(4px)}.stage-copy h3{font:400 clamp(42px,5vw,72px)/1 Georgia,serif;letter-spacing:-.035em;margin:8px 0 14px;text-shadow:0 8px 24px rgba(0,0,0,.28)}.stage-meta{display:flex;gap:34px;flex-wrap:wrap}.meta span{display:block;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:6px}.meta strong{font-size:14px;font-weight:500}.arrows{display:flex;gap:10px}.arrows button{width:52px;height:48px;padding:0}.logo-carousel{display:grid;grid-template-columns:54px minmax(0,1fr) 54px;align-items:stretch;border:1px solid #DEDEDE;border-top:0;background:white}.logo-viewport{min-width:0;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain;scroll-snap-type:x proximity}.logo-viewport::-webkit-scrollbar{display:none}.logo-row{display:flex;flex-wrap:nowrap;width:max-content;min-width:100%}.logo-card{flex:0 0 clamp(155px,14vw,190px);height:126px;padding:20px;border:0;border-right:1px solid #E7E7E7;display:flex;align-items:center;justify-content:center;cursor:pointer;background:white;scroll-snap-align:center;transition:background .2s ease,box-shadow .2s ease}.logo-card.active{outline:2px solid var(--navy);outline-offset:-2px;box-shadow:inset 0 -3px 0 var(--navy)}.logo-card:hover{background:#F7F6F2}.logo-card img{width:100%;max-width:118px;max-height:58px;object-fit:contain;filter:grayscale(1) saturate(0) contrast(1.2)}.logo-placeholder{font-family:Georgia,serif;font-weight:700;letter-spacing:.04em;text-align:center;font-size:16px;color:#111}.logo-scroll{border:0;background:white;color:var(--navy);font-size:22px;cursor:pointer;display:grid;place-items:center;transition:background .2s ease,color .2s ease}.logo-scroll.prev{border-right:1px solid #E7E7E7}.logo-scroll.next{border-left:1px solid #E7E7E7}.logo-scroll:hover{background:var(--navy);color:white}
+.approach{background:var(--navy);color:white}.approach-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(48px,8vw,120px)}.approach h2{font-size:clamp(52px,7vw,92px);max-width:700px}.principles{border-top:1px solid rgba(255,255,255,.22)}.principle{display:grid;grid-template-columns:52px 1fr;padding:26px 0;border-bottom:1px solid rgba(255,255,255,.16)}.principle b{font-family:Georgia,serif;color:var(--gold-soft);font-weight:400}.principle h4{margin:0 0 8px;font-size:18px}.principle p{margin:0;color:rgba(255,255,255,.65);line-height:1.55}
+.founder{display:grid;grid-template-columns:1.05fr .95fr;min-height:720px;background:#EDE9E1}.founder-media{position:relative;min-height:720px;overflow:hidden;background:radial-gradient(circle at 28% 18%,rgba(185,152,87,.24),transparent 30%),radial-gradient(circle at 78% 22%,rgba(255,255,255,.10),transparent 22%),linear-gradient(145deg,#06182F 0%,#0A315D 56%,#0B2344 100%)}.founder-media:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(2,9,18,.34),transparent 40%),linear-gradient(90deg,rgba(255,255,255,.05),transparent 55%);pointer-events:none}.founder-media:after{content:"";position:absolute;width:72%;height:72%;right:-24%;bottom:-22%;border:1px solid rgba(227,201,142,.20);border-radius:50%;box-shadow:0 0 0 40px rgba(227,201,142,.03),0 0 0 80px rgba(227,201,142,.02)}.founder-portrait{position:absolute;z-index:1;left:50%;bottom:0;transform:translateX(-50%);width:min(92%,760px);height:94%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 22px 32px rgba(0,0,0,.24))}.founder-copy{padding:clamp(58px,8vw,120px);display:flex;flex-direction:column;justify-content:center}.founder-copy h2{font-size:clamp(52px,6vw,84px);color:var(--navy);max-width:720px}.founder-copy p{color:#5F6461;font-size:18px;line-height:1.75;max-width:620px}.founder-signature{margin-top:28px;padding-top:22px;border-top:1px solid #CCC7BE;max-width:420px}.founder-signature strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:24px;color:var(--navy);font-weight:400}.founder-signature span{display:block;margin-top:7px;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+
+.story{display:grid;grid-template-columns:1fr 1fr;min-height:660px;background:#F1EFE9}.story-media{min-height:560px;background:linear-gradient(135deg,#D3D0C8,#F4F2ED);position:relative;overflow:hidden}.story-media img.story-bg{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}.story-stamp{position:absolute;left:34px;bottom:32px;background:var(--navy);width:112px;height:112px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.65);padding:10px}.story-stamp img{width:100%;height:100%;object-fit:contain}.story-copy{padding:clamp(54px,8vw,120px);display:flex;flex-direction:column;justify-content:center}.story-copy h2{font-size:clamp(52px,6vw,84px);color:var(--navy)}.story-copy p{color:#666;font-size:18px;line-height:1.75;max-width:620px}.story-copy .btn{margin-top:26px;width:max-content}
+.footer{background:var(--dark);color:white;padding:72px clamp(28px,7vw,112px) 42px}.footer-top{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:50px}.footer-brand{min-height:100px;display:flex;align-items:center;margin-bottom:18px}.footer-mark{width:min(220px,82%);max-height:96px;object-fit:contain;object-position:left center}.footer p{color:rgba(255,255,255,.60);max-width:480px;line-height:1.65}.footer h5{margin:0 0 20px;color:var(--gold-soft);font-size:10px;letter-spacing:.16em;text-transform:uppercase}.footer-nav{display:grid;gap:12px;font-size:14px}.footer-bottom{margin-top:70px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+@media(max-width:980px){.main{margin-left:0;padding-top:68px}.rail{width:100%;height:68px;right:0;bottom:auto;flex-direction:row;padding:8px 18px}.rail-mark{width:44px;height:44px}.rail-center{flex-direction:row}.rail-bottom{display:none}.intro-head,.approach-grid,.founder,.story,.footer-top{grid-template-columns:1fr}.entrances{grid-template-columns:1fr}.entrance:first-child{border-right:0;border-bottom:1px solid var(--line)}.founder-media{min-height:620px}.story-media{min-height:440px}}
+@media(max-width:640px){.section{padding:76px 22px}.hero{min-height:78vh}.hero-inner{padding:54px 24px 64px}.hero-copy-shell{padding-right:16px}.hero h1{font-size:clamp(54px,18vw,82px)}.scroll{display:none}.intro-head{gap:24px}.entrance{padding:34px 26px;min-height:455px}.entrance-brand{min-height:200px;margin:6px 0 20px}.entrance-brand img{width:min(380px,100%);height:185px}.entrance-link{left:26px}.company-stage{min-height:460px}.stage-copy{flex-direction:column;align-items:flex-start}.stage-panel{width:100%}.logo-carousel{grid-template-columns:42px minmax(0,1fr) 42px}.logo-card{flex-basis:150px;height:110px}.founder-media{min-height:500px}.founder-portrait{width:104%;height:94%}.founder-copy{padding:70px 26px}.story-copy{padding:70px 26px}.footer{padding:64px 24px 34px}}
+</style>
+</head>
+<body>
+<aside class="rail">
+  <a class="rail-mark" href="#top" aria-label="Back to top"><img id="masterLogoRail" src="assets/brand/master.png" alt="Williams III"></a>
+  <a class="rail-center" href="#enterprise"><span class="menu-icon"><span></span><span></span></span><span class="menu-label">Explore</span></a>
+  <div class="rail-bottom">Williams III · Family Enterprise</div>
+</aside>
+
+<main class="main">
+  <section class="hero" id="top">
+    <img class="hero-bg" id="heroImage" src="assets/images/home-hero.jpg" alt="">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-copy-shell">
+        <div class="kicker">Williams III · Family Enterprise</div>
+        <h1 class="display">Building enduring companies. Preserving family legacy.</h1>
+        <p>A family enterprise for proprietary ventures, strategic ownership interests, digital assets, and long-term stewardship.</p>
+        <div class="hero-actions"><a class="btn" href="#enterprise">Discover Williams III ↓</a><a class="btn" href="#companies">Our Companies</a></div>
+      </div>
+    </div>
+    <div class="scroll">Scroll to discover</div>
+  </section>
+
+  <section id="enterprise" class="section intro">
+    <div class="intro-head">
+      <div><div class="kicker">The Enterprise</div><h2 class="display">One family.<br>Two distinct mandates.</h2></div>
+      <p>Williams III is the institutional expression of a family enterprise: preserving proprietary family assets while participating selectively in companies and ventures built with partners.</p>
+    </div>
+
+    <div class="entrances">
+      <a class="entrance" href="family-office/">
+        <div class="entrance-num">01</div>
+        <div class="entrance-brand"><img id="officeLogo" src="assets/Williams Family Office LOGO.png" alt="Williams III Family Office"></div>
+        <p>Wholly family-owned ventures, intellectual property, digital assets, and long-term family stewardship.</p>
+        <div class="entrance-link">Enter Family Office →</div>
+      </a>
+      <a class="entrance" href="family-holdings/">
+        <div class="entrance-num">02</div>
+        <div class="entrance-brand"><img id="holdingsLogo" src="assets/Williams Family Holdings logo.png" alt="Williams III Family Holdings"></div>
+        <p>Strategic interests in companies, partnerships, joint ventures, and shared opportunities.</p>
+        <div class="entrance-link">Enter Family Holdings →</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="companies" class="section portfolio">
+    <div class="portfolio-head">
+      <div><div class="kicker">Selected Interests</div><h2 class="display">Our Companies</h2></div>
+      <p>Family-owned ventures and selected portfolio interests presented through a single Williams III visual system. Upload the actual company logos and hero imagery to GitHub and this section will use them automatically.</p>
+    </div>
+
+    <div class="company-stage">
+      <div class="company-fallback"><span id="fallbackInitials">C</span></div>
+      <img class="company-bg" id="companyHero" alt="">
+      <div class="stage-copy">
+        <div class="stage-panel">
+          <div class="kicker" id="companyGroup">Family Office</div>
+          <h3 id="companyName">COVRE</h3>
+          <div class="stage-meta">
+            <div class="meta"><span>Relationship</span><strong id="companyRelationship">Family Owned</strong></div>
+            <div class="meta"><span>Sector</span><strong id="companySector">Digital Venture</strong></div>
+          </div>
+        </div>
+        <div class="arrows"><button class="btn" id="prevCompany" type="button">←</button><button class="btn" id="nextCompany" type="button">→</button></div>
+      </div>
+    </div>
+
+    <div class="logo-carousel"><button class="logo-scroll prev" id="logoPrev" type="button" aria-label="Scroll company logos left">←</button><div class="logo-viewport" id="logoViewport"><div class="logo-row" id="logoRow"></div></div><button class="logo-scroll next" id="logoNext" type="button" aria-label="Scroll company logos right">→</button></div>
+  </section>
+
+  <section class="section approach">
+    <div class="approach-grid">
+      <div><div class="kicker">Our Approach</div><h2 class="display">Built to endure beyond a single generation.</h2></div>
+      <div class="principles">
+        <div class="principle"><b>01</b><div><h4>Build with conviction</h4><p>Create and support companies with clear purpose, durable utility, and room to compound.</p></div></div>
+        <div class="principle"><b>02</b><div><h4>Protect what is proprietary</h4><p>Keep family-owned intellectual property, ventures, and digital assets distinct from shared interests.</p></div></div>
+        <div class="principle"><b>03</b><div><h4>Partner selectively</h4><p>Participate in shared opportunities where values, incentives, and long-term interests align.</p></div></div>
+        <div class="principle"><b>04</b><div><h4>Think in generations</h4><p>Treat governance, reputation, and stewardship as assets that must compound alongside capital.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="founder" id="leadership">
+    <div class="founder-media">
+      <img class="founder-portrait" src="assets/rwiii headshot update.png" alt="Robert Williams III">
+    </div>
+    <div class="founder-copy">
+      <div class="kicker">Leadership</div>
+      <h2 class="display">Stewardship with long-term intent.</h2>
+      <p>Williams III reflects a disciplined family-enterprise approach to building, holding, and guiding enduring assets across proprietary ventures, strategic partnerships, and digital property.</p>
+      <div class="founder-signature">
+        <strong>Robert Williams III</strong>
+        <span>Founder · Williams III</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="story-media">
+      <img class="story-bg" id="storyImage" src="assets/images/story.jpg" alt="">
+      <div class="story-stamp"><img id="masterLogoStory" src="assets/brand/master.png" alt="Williams III"></div>
+    </div>
+    <div class="story-copy">
+      <div class="kicker">Our Story</div>
+      <h2 class="display">A record that starts now and grows with us.</h2>
+      <p>The Williams III story is not presented as inherited history. It is a living record of businesses built, assets created, partnerships formed, and lessons carried forward. The timeline will expand as the enterprise does.</p>
+      <a class="btn dark" href="story/">Explore Our History →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand"><img class="footer-mark" id="masterLogoFooter" src="assets/brand/master.png" alt="Williams III"></div>
+        <p>A family enterprise spanning proprietary ventures, intellectual property, strategic ownership interests, and long-term stewardship.</p>
+      </div>
+      <div><h5>Enterprise</h5><div class="footer-nav"><a href="family-office/">Family Office</a><a href="family-holdings/">Family Holdings</a><a href="companies/">Companies</a><a href="digital-estate/">Digital Estate</a></div></div>
+      <div><h5>Institution</h5><div class="footer-nav"><a href="story/">Our Story</a><a href="leadership/">Leadership</a><a href="principles/">Principles</a><a href="contact/">Contact</a><a href="private-access/">Private Access</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Williams III</span><span>Family Holdings · Family Office</span><span>Privacy · Legal</span></div>
+  </footer>
+</main>
+
+<script>
+const fallbackAssets={
+  master:"assets/master.svg",
+  office:"assets/Williams Family Office LOGO.png",
+  holdings:"assets/Williams Family Holdings logo.png"
+};
+function fallbackImage(id,fallback){const el=document.getElementById(id);if(!el)return;el.onerror=()=>{if(fallback&&el.src.indexOf(fallback)===-1){el.src=fallback}else{el.style.display="none"}}}
+fallbackImage("masterLogoRail",fallbackAssets.master);fallbackImage("masterLogoStory",fallbackAssets.master);fallbackImage("masterLogoFooter",fallbackAssets.master);fallbackImage("officeLogo",fallbackAssets.office);fallbackImage("holdingsLogo",fallbackAssets.holdings);fallbackImage("heroImage");fallbackImage("storyImage");
+
+const companies=[
+{name:"COVRE",group:"Family Office",sector:"Digital Venture",relationship:"Family Owned",slug:"covre",sourceLogo:"Covre Logo Main.png"},
+{name:"PLEIOTAXY",group:"Family Office",sector:"Technology",relationship:"Family Owned",slug:"pleiotaxy",sourceLogo:"PleioTAXy Logo Horizontal.png"},
+{name:"MAATRA",group:"Family Office",sector:"Digital Platform",relationship:"Family Owned",slug:"maatra",sourceLogo:"maatra horizontal.png"},
+{name:"RE:CONTINUITY",group:"Family Office",sector:"Infrastructure",relationship:"Family Owned",slug:"re-continuity",sourceLogo:"re-continuity-icon.png"},
+{name:"LOT",group:"Family Office",sector:"Application",relationship:"Family Owned",slug:"lot",sourceLogo:"Lot Logo Official.png"},
+{name:"RELAYED",group:"Family Office",sector:"Digital Venture",relationship:"Family Owned",slug:"relayed",sourceLogo:"Relayed logo.png"},
+{name:"CLEANR",group:"Family Holdings",sector:"Technology / Services",relationship:"Portfolio Interest",slug:"cleanr",sourceLogo:"cleanr-app@2x.png"},
+{name:"DOCC",group:"Family Holdings",sector:"Technology",relationship:"Portfolio Interest",slug:"docc",sourceLogo:"docc-horizontal.png"},
+{name:"MTC",group:"Family Holdings",sector:"Operating Company",relationship:"Portfolio Interest",slug:"mtc",sourceLogo:"mtc logo.png"},
+{name:"RE:EAT",group:"Family Holdings",sector:"Consumer Technology",relationship:"Portfolio Interest",slug:"re-eat",sourceLogo:"Re Eat Horizontal Logo.png"}
+];
+let activeIndex=0;
+const hero=document.getElementById("companyHero"),logoRow=document.getElementById("logoRow"),logoViewport=document.getElementById("logoViewport");
+function initials(name){return name.split(/\s|:/).filter(Boolean).map(x=>x[0]).slice(0,3).join("").toUpperCase()}
+function setCompany(index){
+  activeIndex=(index+companies.length)%companies.length;
+  const c=companies[activeIndex];
+  document.getElementById("companyGroup").textContent=c.group;
+  document.getElementById("companyName").textContent=c.name;
+  document.getElementById("companyRelationship").textContent=c.relationship;
+  document.getElementById("companySector").textContent=c.sector;
+  document.getElementById("fallbackInitials").textContent=initials(c.name);
+  hero.style.display="block";hero.src="assets/companies/"+c.slug+"/hero.jpg";hero.onerror=()=>hero.style.display="none";
+  [...logoRow.children].forEach((node,i)=>node.classList.toggle("active",i===activeIndex));
+  const activeCard=logoRow.children[activeIndex];
+  if(activeCard&&logoViewport){const left=activeCard.offsetLeft-(logoViewport.clientWidth-activeCard.offsetWidth)/2;logoViewport.scrollTo({left:Math.max(0,left),behavior:"smooth"})}
+}
+companies.forEach((c,index)=>{
+  const button=document.createElement("button");button.type="button";button.className="logo-card";
+  const img=document.createElement("img");img.src="assets/"+c.sourceLogo;img.alt=c.name+" logo";
+  const text=document.createElement("span");text.className="logo-placeholder";text.textContent=c.name;text.style.display="none";
+  img.onerror=()=>{if(!img.dataset.previewFallback){img.dataset.previewFallback="1";img.src="assets/companies/"+c.slug+"/logo.png"}else{img.style.display="none";text.style.display="block"}};
+  button.appendChild(img);button.appendChild(text);button.addEventListener("click",()=>setCompany(index));logoRow.appendChild(button);
+});
+document.getElementById("prevCompany").addEventListener("click",()=>setCompany(activeIndex-1));
+document.getElementById("nextCompany").addEventListener("click",()=>setCompany(activeIndex+1));
+document.getElementById("logoPrev").addEventListener("click",()=>logoViewport.scrollBy({left:-Math.max(320,logoViewport.clientWidth*.75),behavior:"smooth"}));
+document.getElementById("logoNext").addEventListener("click",()=>logoViewport.scrollBy({left:Math.max(320,logoViewport.clientWidth*.75),behavior:"smooth"}));
+document.getElementById("year").textContent=new Date().getFullYear();
+setCompany(0);
+</script>
+<!-- full-site-sync -->
+</body>
+</html>
