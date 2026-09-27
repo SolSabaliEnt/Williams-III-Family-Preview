@@ -26,7 +26,7 @@
 <style>
 :root{--navy:#0A315D;--dark:#05172B;--gold:#B99857;--gold-soft:#E3C98E;--ivory:#F7F4ED;--ink:#171A1D;--muted:#676B68;--line:#D8D5CF}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.main{margin-left:94px}
-.rail{position:fixed;inset:0 auto 0 0;width:94px;background:var(--navy);color:white;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:26px 14px 24px;border-right:1px solid rgba(255,255,255,.08)}.rail-mark{width:64px;height:64px;border:1px solid rgba(255,255,255,.62);display:grid;place-items:center;padding:7px}.rail-mark img{width:100%;height:100%;object-fit:contain}.rail-center{display:flex;flex-direction:column;gap:10px;align-items:center;cursor:pointer}.menu-icon{width:22px;height:14px;display:grid;gap:5px}.menu-icon span{height:1px;background:white}.menu-label{font-size:9px;font-weight:750;letter-spacing:.18em;text-transform:uppercase}.rail-bottom{writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.rail{position:fixed;inset:0 auto 0 0;width:94px;background:var(--navy);color:white;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:26px 14px 24px;border-right:1px solid rgba(255,255,255,.08)}.rail-mark{width:64px;height:64px;border:1px solid rgba(255,255,255,.62);display:grid;place-items:center;padding:7px}.rail-mark img{width:100%;height:100%;object-fit:contain}.rail-center{display:flex;flex-direction:column;gap:10px;align-items:center;cursor:pointer}.menu-icon{width:22px;height:14px;display:grid;gap:5px;transition:width .2s ease,height .2s ease,background .2s ease}.menu-icon span{height:1px;background:white;transition:opacity .15s ease}.rail-center[aria-expanded="true"] .menu-icon{width:28px;height:26px;display:block;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 30'%3E%3Cg fill='none' stroke='%2374C3EF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 2 29 26H3Z'/%3E%3Cpath d='M16 2v15M3 26l13-9 13 9'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}.rail-center[aria-expanded="true"] .menu-icon span{opacity:0}.menu-label{font-size:9px;font-weight:750;letter-spacing:.18em;text-transform:uppercase}.rail-bottom{writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
 .section{padding:112px clamp(28px,7vw,112px)}.kicker{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}.display{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.045em;line-height:.96}
 .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(135deg,#07192F 0%,#0D315C 58%,#07192F 100%);color:white}.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}.hero video.hero-bg{display:block}.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,20,39,.84) 0%,rgba(5,20,39,.58) 35%,rgba(5,20,39,.16) 72%,rgba(5,20,39,.42) 100%),linear-gradient(0deg,rgba(5,20,39,.42),rgba(5,20,39,.18))}.hero-inner{position:relative;z-index:2;width:min(1240px,100%);padding:clamp(50px,9vw,118px);padding-bottom:88px}.hero-copy-shell{display:inline-block;max-width:min(980px,100%);padding:clamp(22px,2vw,28px) clamp(18px,2vw,26px) clamp(18px,2vw,24px) 0;background:linear-gradient(90deg,rgba(2,9,18,.46) 0%,rgba(2,9,18,.24) 65%,rgba(2,9,18,0) 100%);border-left:1px solid rgba(227,201,142,.36)}.hero .kicker{color:var(--gold-soft)}.hero h1{font-size:clamp(62px,9vw,132px);max-width:980px;text-shadow:0 10px 34px rgba(0,0,0,.28)}.hero p{max-width:650px;margin:28px 0 0;font-size:clamp(17px,2vw,24px);line-height:1.45;color:rgba(255,255,255,.88);text-shadow:0 8px 24px rgba(0,0,0,.22)}.hero-actions{margin-top:42px;display:flex;flex-wrap:wrap;gap:14px}.btn{min-height:48px;padding:0 20px;border:1px solid rgba(255,255,255,.62);background:transparent;color:white;display:inline-flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.12em;font-weight:800;text-transform:uppercase;cursor:pointer;transition:.25s ease}.btn:hover{background:white;color:var(--navy)}.btn.dark{border-color:var(--navy);color:var(--navy)}.btn.dark:hover{background:var(--navy);color:white}.scroll{position:absolute;right:36px;bottom:34px;z-index:3;font-size:9px;letter-spacing:.18em;text-transform:uppercase;writing-mode:vertical-rl;opacity:.72}
 .intro{background:var(--ivory)}.intro-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px}.intro-head h2{font-size:clamp(48px,6vw,86px);color:var(--navy)}.intro-head p{font-size:18px;line-height:1.7;color:#5E625F;max-width:620px}.entrances{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.entrance{min-height:520px;padding:48px;position:relative;cursor:pointer;transition:background .3s ease,color .3s ease}.entrance:first-child{border-right:1px solid var(--line)}.entrance:hover{background:var(--navy);color:white}.entrance-num{font:400 13px Georgia,serif;color:var(--gold);margin-bottom:12px}.entrance-brand{margin:12px 0 28px;min-height:230px;display:flex;align-items:center;justify-content:center}.entrance-brand img{width:min(520px,100%);height:210px;object-fit:contain;object-position:center center;transition:transform .35s ease}.entrance:hover .entrance-brand img{transform:scale(1.035)}.entrance p{max-width:560px;line-height:1.65;opacity:.76;font-size:16px}.entrance-link{position:absolute;left:48px;bottom:42px;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
@@ -55,10 +55,8 @@
 .home-explore-secondary{gap:12px;padding-top:8px}
 .home-explore-secondary a{font-size:clamp(20px,2vw,30px);line-height:1.35}
 .home-explore-primary a:hover,.home-explore-secondary a:hover{color:#74C3EF}
-.home-explore-close{position:absolute;left:28px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;border:0;background:none;color:white;cursor:pointer;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-.home-explore-close:before{content:"←";font-size:28px;font-weight:300;color:#74C3EF}
 body.menu-open{overflow:hidden}
-@media(max-width:980px){.home-explore-overlay{inset:68px 0 0 0}.home-explore-inner{grid-template-columns:1fr;gap:34px;padding:46px 28px}.home-explore-close{position:static;transform:none;align-items:flex-start;margin-bottom:18px}}
+@media(max-width:980px){.home-explore-overlay{inset:68px 0 0 0}.home-explore-inner{grid-template-columns:1fr;gap:34px;padding:46px 28px}}
 </style>
 </head>
 <body>
@@ -68,7 +66,7 @@ body.menu-open{overflow:hidden}
   <div class="rail-bottom">Williams III · Family Enterprise</div>
 </aside>
 <div class="home-explore-overlay" id="homeExploreOverlay" role="dialog" aria-modal="true" aria-label="Explore Williams III">
-  <button class="home-explore-close" id="homeExploreClose" type="button">Menu</button>
+  
   <div class="home-explore-inner">
     <nav class="home-explore-primary">
       <a href="./">Williams III</a>
@@ -227,13 +225,11 @@ document.getElementById("nextCompany").addEventListener("click",()=>setCompany(a
 document.getElementById("logoPrev").addEventListener("click",()=>logoViewport.scrollBy({left:-Math.max(320,logoViewport.clientWidth*.75),behavior:"smooth"}));
 document.getElementById("logoNext").addEventListener("click",()=>logoViewport.scrollBy({left:Math.max(320,logoViewport.clientWidth*.75),behavior:"smooth"}));
 document.getElementById("year").textContent=new Date().getFullYear();
-const homeExploreTrigger=document.getElementById("homeExploreTrigger"),homeExploreOverlay=document.getElementById("homeExploreOverlay"),homeExploreClose=document.getElementById("homeExploreClose");
-function openHomeExplore(){homeExploreOverlay.classList.add("open");document.body.classList.add("menu-open");homeExploreTrigger.setAttribute("aria-expanded","true");homeExploreClose.focus()}
-function closeHomeExplore(){homeExploreOverlay.classList.remove("open");document.body.classList.remove("menu-open");homeExploreTrigger.setAttribute("aria-expanded","false");homeExploreTrigger.focus()}
-homeExploreTrigger.addEventListener("click",e=>{e.preventDefault();openHomeExplore()});
-homeExploreClose.addEventListener("click",closeHomeExplore);
-homeExploreOverlay.addEventListener("click",e=>{if(e.target===homeExploreOverlay)closeHomeExplore()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape"&&homeExploreOverlay.classList.contains("open"))closeHomeExplore()});
+const homeExploreTrigger=document.getElementById("homeExploreTrigger"),homeExploreOverlay=document.getElementById("homeExploreOverlay");
+function setHomeExplore(open){homeExploreOverlay.classList.toggle("open",open);document.body.classList.toggle("menu-open",open);homeExploreTrigger.setAttribute("aria-expanded",open?"true":"false")}
+homeExploreTrigger.addEventListener("click",e=>{e.preventDefault();setHomeExplore(!homeExploreOverlay.classList.contains("open"))});
+homeExploreOverlay.addEventListener("click",e=>{if(e.target===homeExploreOverlay)setHomeExplore(false)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&homeExploreOverlay.classList.contains("open")){setHomeExplore(false);homeExploreTrigger.focus()}});
 setCompany(0);
 </script>
 <!-- full-site-sync -->
