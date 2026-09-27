@@ -77,3 +77,18 @@
 .leadership-copy p{font-size:16px;line-height:1.76;color:var(--muted);margin:0 0 18px}
 @media(max-width:900px){.leadership-head,.leadership-profile{width:min(100% - 44px,1040px)}.leadership-profile{grid-template-columns:1fr;gap:38px}.leadership-portrait{height:430px}.leadership-copy{max-width:none}}
 @media(max-width:560px){.leadership-head{padding:48px 0 38px}.leadership-head h1{font-size:46px}.leadership-head p{font-size:16px}.leadership-profile{padding:44px 0 64px}.leadership-portrait{height:350px}.leadership-copy h2{font-size:40px}}
+/* --- Full-screen Explore menu --- */
+.explore-overlay{position:fixed;inset:0 0 0 80px;background:var(--navy);color:#fff;z-index:1000;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,visibility .28s ease}
+.explore-overlay.open{opacity:1;visibility:visible;pointer-events:auto}
+.explore-inner{min-height:100%;display:grid;grid-template-columns:minmax(280px,.8fr) minmax(360px,1.2fr);gap:clamp(64px,10vw,150px);align-content:center;padding:clamp(70px,9vw,120px)}
+.explore-primary,.explore-secondary{display:grid;align-content:start}
+.explore-primary a{font-size:clamp(28px,3vw,42px);font-weight:750;line-height:1.45;letter-spacing:-.025em}
+.explore-secondary{gap:12px;padding-top:8px}
+.explore-secondary a{font-size:clamp(20px,2vw,30px);line-height:1.35}
+.explore-primary a:hover,.explore-secondary a:hover{color:#74C3EF}
+.explore-close{position:absolute;left:28px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;border:0;background:none;color:#fff;cursor:pointer;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.explore-close:before{content:"←";font-size:28px;font-weight:300;color:#74C3EF}
+body.menu-open{overflow:hidden}
+.brand-hero{height:auto;min-height:420px;background:#f4f4f2}
+.hero-media.brand-hero img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;display:block}
+@media(max-width:900px){.explore-overlay{inset:68px 0 0 0}.explore-inner{grid-template-columns:1fr;gap:34px;padding:46px 28px}.explore-close{position:static;transform:none;align-items:flex-start;margin-bottom:18px}.explore-close:before{display:inline}.brand-hero{min-height:300px}}
