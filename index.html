@@ -46,14 +46,46 @@
 .footer{background:var(--dark);color:white;padding:72px clamp(28px,7vw,112px) 42px}.footer-top{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:50px}.footer-brand{min-height:100px;display:flex;align-items:center;margin-bottom:18px}.footer-mark{width:min(220px,82%);max-height:96px;object-fit:contain;object-position:left center}.footer p{color:rgba(255,255,255,.60);max-width:480px;line-height:1.65}.footer h5{margin:0 0 20px;color:var(--gold-soft);font-size:10px;letter-spacing:.16em;text-transform:uppercase}.footer-nav{display:grid;gap:12px;font-size:14px}.footer-bottom{margin-top:70px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 @media(max-width:980px){.main{margin-left:0;padding-top:68px}.rail{width:100%;height:68px;right:0;bottom:auto;flex-direction:row;padding:8px 18px}.rail-mark{width:44px;height:44px}.rail-center{flex-direction:row}.rail-bottom{display:none}.intro-head,.approach-grid,.footer-top{grid-template-columns:1fr}.story-inner{grid-template-columns:1fr;gap:30px}.entrances{grid-template-columns:1fr}.entrance:first-child{border-right:0;border-bottom:1px solid var(--line)}.founder-media{min-height:620px}}
 @media(max-width:640px){.section{padding:76px 22px}.hero{min-height:78vh}.hero-inner{padding:54px 24px 64px}.hero-copy-shell{padding-right:16px}.hero h1{font-size:clamp(54px,18vw,82px)}.scroll{display:none}.intro-head{gap:24px}.entrance{padding:34px 26px;min-height:455px}.entrance-brand{min-height:200px;margin:6px 0 20px}.entrance-brand img{width:min(380px,100%);height:185px}.entrance-link{left:26px}.company-stage{min-height:460px}.stage-copy{flex-direction:column;align-items:flex-start}.stage-panel{width:100%}.logo-carousel{grid-template-columns:42px minmax(0,1fr) 42px}.logo-card{flex-basis:150px;height:110px}.founder-media{min-height:500px}.founder-portrait{width:104%;height:94%}.founder-copy{padding:70px 26px}.footer{padding:64px 24px 34px}}
+
+.home-explore-overlay{position:fixed;inset:0 0 0 94px;background:var(--navy);color:white;z-index:1000;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,visibility .28s ease}
+.home-explore-overlay.open{opacity:1;visibility:visible;pointer-events:auto}
+.home-explore-inner{min-height:100%;display:grid;grid-template-columns:minmax(280px,.8fr) minmax(360px,1.2fr);gap:clamp(64px,10vw,150px);align-content:center;padding:clamp(70px,9vw,120px)}
+.home-explore-primary,.home-explore-secondary{display:grid;align-content:start}
+.home-explore-primary a{font-size:clamp(28px,3vw,42px);font-weight:750;line-height:1.45;letter-spacing:-.025em}
+.home-explore-secondary{gap:12px;padding-top:8px}
+.home-explore-secondary a{font-size:clamp(20px,2vw,30px);line-height:1.35}
+.home-explore-primary a:hover,.home-explore-secondary a:hover{color:#74C3EF}
+.home-explore-close{position:absolute;left:28px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;border:0;background:none;color:white;cursor:pointer;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.home-explore-close:before{content:"←";font-size:28px;font-weight:300;color:#74C3EF}
+body.menu-open{overflow:hidden}
+@media(max-width:980px){.home-explore-overlay{inset:68px 0 0 0}.home-explore-inner{grid-template-columns:1fr;gap:34px;padding:46px 28px}.home-explore-close{position:static;transform:none;align-items:flex-start;margin-bottom:18px}}
 </style>
 </head>
 <body>
 <aside class="rail">
   <a class="rail-mark" href="#top" aria-label="Back to top"><img id="masterLogoRail" src="assets/williams iii master mark.png" alt="Williams III"></a>
-  <a class="rail-center" href="#enterprise"><span class="menu-icon"><span></span><span></span></span><span class="menu-label">Explore</span></a>
+  <a class="rail-center" href="#" id="homeExploreTrigger" aria-haspopup="dialog" aria-expanded="false"><span class="menu-icon"><span></span><span></span></span><span class="menu-label">Explore</span></a>
   <div class="rail-bottom">Williams III · Family Enterprise</div>
 </aside>
+<div class="home-explore-overlay" id="homeExploreOverlay" role="dialog" aria-modal="true" aria-label="Explore Williams III">
+  <button class="home-explore-close" id="homeExploreClose" type="button">Menu</button>
+  <div class="home-explore-inner">
+    <nav class="home-explore-primary">
+      <a href="./">Williams III</a>
+      <a href="family-office/">Family Office</a>
+      <a href="family-holdings/">Family Holdings</a>
+      <a href="companies/">Companies</a>
+    </nav>
+    <nav class="home-explore-secondary">
+      <a href="story/">Our Story</a>
+      <a href="leadership/">Leadership</a>
+      <a href="principles/">Principles</a>
+      <a href="digital-estate/">Digital Estate</a>
+      <a href="contact/">Contact</a>
+      <a href="private-access/">Private Access</a>
+    </nav>
+  </div>
+</div>
 
 <main class="main">
   <section class="hero" id="top">
@@ -195,6 +227,13 @@ document.getElementById("nextCompany").addEventListener("click",()=>setCompany(a
 document.getElementById("logoPrev").addEventListener("click",()=>logoViewport.scrollBy({left:-Math.max(320,logoViewport.clientWidth*.75),behavior:"smooth"}));
 document.getElementById("logoNext").addEventListener("click",()=>logoViewport.scrollBy({left:Math.max(320,logoViewport.clientWidth*.75),behavior:"smooth"}));
 document.getElementById("year").textContent=new Date().getFullYear();
+const homeExploreTrigger=document.getElementById("homeExploreTrigger"),homeExploreOverlay=document.getElementById("homeExploreOverlay"),homeExploreClose=document.getElementById("homeExploreClose");
+function openHomeExplore(){homeExploreOverlay.classList.add("open");document.body.classList.add("menu-open");homeExploreTrigger.setAttribute("aria-expanded","true");homeExploreClose.focus()}
+function closeHomeExplore(){homeExploreOverlay.classList.remove("open");document.body.classList.remove("menu-open");homeExploreTrigger.setAttribute("aria-expanded","false");homeExploreTrigger.focus()}
+homeExploreTrigger.addEventListener("click",e=>{e.preventDefault();openHomeExplore()});
+homeExploreClose.addEventListener("click",closeHomeExplore);
+homeExploreOverlay.addEventListener("click",e=>{if(e.target===homeExploreOverlay)closeHomeExplore()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&homeExploreOverlay.classList.contains("open"))closeHomeExplore()});
 setCompany(0);
 </script>
 <!-- full-site-sync -->
