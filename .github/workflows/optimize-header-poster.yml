@@ -1,0 +1,88 @@
+name: Optimize header poster
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/optimize-header-poster.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow
+        run: python -m pip install --quiet pillow
+
+      - name: Create lightweight poster at identical dimensions
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+
+          src = Path("assets/bg vid screenshot v2.png")
+          dst = Path("assets/bg vid screenshot v2.webp")
+
+          im = Image.open(src)
+          original_size = src.stat().st_size
+          original_dims = im.size
+
+          if im.mode in ("RGBA", "LA"):
+              bg = Image.new("RGB", im.size, (5, 23, 43))
+              alpha = im.getchannel("A")
+              bg.paste(im.convert("RGB"), mask=alpha)
+              im = bg
+          else:
+              im = im.convert("RGB")
+
+          im.save(dst, "WEBP", quality=72, method=6)
+
+          assert Image.open(dst).size == original_dims
+          print(f"dimensions: {original_dims[0]}x{original_dims[1]}")
+          print(f"before: {original_size:,} bytes")
+          print(f"after:  {dst.stat().st_size:,} bytes")
+          PY
+
+      - name: Point hero poster to optimized asset and preload it
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path("index.html")
+          html = p.read_text()
+
+          html = html.replace(
+              'poster="assets/bg vid screenshot v2.png"',
+              'poster="assets/bg vid screenshot v2.webp"'
+          )
+
+          preload = '<link rel="preload" as="image" href="assets/bg vid screenshot v2.webp" fetchpriority="high">'
+          if preload not in html:
+              anchor = '<link rel="canonical" href="https://williamsiiifamily.com/">'
+              html = html.replace(anchor, anchor + "\n" + preload)
+
+          p.write_text(html)
+          PY
+
+      - name: Commit optimized header poster
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "assets/bg vid screenshot v2.webp" index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Optimize header poster for faster first paint"
+          git push
