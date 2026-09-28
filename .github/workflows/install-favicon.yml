@@ -53,12 +53,20 @@ jobs:
               im = im.crop(bbox)
 
           def square_icon(size, out):
-              canvas = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+              # The browser favicon slot is square. Keep the existing master
+              # mark completely intact, but give it the same full-square
+              # visual presence as institutional favicons like Exor's.
+              # The navy field fills the favicon slot; the approved asset is
+              # centered on top without redrawing or changing its geometry.
+              canvas = Image.new("RGBA", (size, size), (10, 54, 99, 255))
               copy = im.copy()
 
-              # Use virtually the entire available favicon area.
-              # No artificial border/padding around the current asset.
-              copy.thumbnail((size, size), Image.Resampling.LANCZOS)
+              # Make the approved mark as large as possible while preserving
+              # its exact aspect ratio and avoiding edge clipping.
+              max_w = size
+              max_h = int(size * 0.72)
+              copy.thumbnail((max_w, max_h), Image.Resampling.LANCZOS)
+
               x = (size - copy.width) // 2
               y = (size - copy.height) // 2
               canvas.alpha_composite(copy, (x, y))
