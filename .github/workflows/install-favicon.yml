@@ -23,35 +23,54 @@ jobs:
       - name: Install Pillow
         run: python -m pip install --quiet pillow
 
-      - name: Build favicon assets from master mark
+      - name: Build tightly-fitted favicon assets from existing master mark
         run: |
           python - <<'PY'
           from pathlib import Path
-          from PIL import Image
+          from PIL import Image, ImageChops
 
           src = Path("assets/williams iii master mark.png")
           im = Image.open(src).convert("RGBA")
 
-          # Trim transparent space while preserving the official mark itself.
-          bbox = im.getbbox()
+          # Tight visual crop: ignore extremely faint/transparent pixels so the
+          # actual existing mark fills the favicon box instead of inheriting
+          # whitespace from the source canvas.
+          alpha = im.getchannel("A")
+          mask = alpha.point(lambda a: 255 if a >= 24 else 0)
+          bbox = mask.getbbox()
+
+          # Fallback for an opaque source canvas: crop away any uniform corner
+          # background while preserving the existing mark artwork itself.
+          if not bbox or bbox == (0, 0, im.width, im.height):
+              bg = Image.new("RGBA", im.size, im.getpixel((0, 0)))
+              diff = ImageChops.difference(im, bg).convert("L")
+              diff = diff.point(lambda v: 255 if v >= 18 else 0)
+              alt = diff.getbbox()
+              if alt:
+                  bbox = alt
+
           if bbox:
               im = im.crop(bbox)
 
           def square_icon(size, out):
-              icon = Image.new("RGBA", (size, size), (0,0,0,0))
+              canvas = Image.new("RGBA", (size, size), (0, 0, 0, 0))
               copy = im.copy()
-              copy.thumbnail((int(size*0.88), int(size*0.88)), Image.Resampling.LANCZOS)
-              x = (size-copy.width)//2
-              y = (size-copy.height)//2
-              icon.alpha_composite(copy, (x,y))
-              icon.save(out, optimize=True)
 
-          square_icon(32, "assets/favicon-32.png")
-          square_icon(192, "assets/favicon-192.png")
-          square_icon(180, "assets/apple-touch-icon.png")
+              # Use virtually the entire available favicon area.
+              # No artificial border/padding around the current asset.
+              copy.thumbnail((size, size), Image.Resampling.LANCZOS)
+              x = (size - copy.width) // 2
+              y = (size - copy.height) // 2
+              canvas.alpha_composite(copy, (x, y))
+              canvas.save(out, optimize=True)
+
+          square_icon(32, "assets/favicon-wiii-32.png")
+          square_icon(64, "assets/favicon-wiii-64.png")
+          square_icon(192, "assets/favicon-wiii-192.png")
+          square_icon(180, "assets/apple-touch-icon-wiii.png")
           PY
 
-      - name: Add favicon declarations to every HTML page
+      - name: Replace favicon declarations sitewide
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -60,35 +79,42 @@ jobs:
           for page in Path(".").rglob("*.html"):
               if ".git" in page.parts:
                   continue
-              html = page.read_text(encoding="utf-8")
-              if 'data-wiii-favicon="true"' in html:
-                  continue
 
-              rel32 = os.path.relpath("assets/favicon-32.png", page.parent).replace(os.sep, "/")
-              rel192 = os.path.relpath("assets/favicon-192.png", page.parent).replace(os.sep, "/")
-              relapple = os.path.relpath("assets/apple-touch-icon.png", page.parent).replace(os.sep, "/")
+              html = page.read_text(encoding="utf-8")
+
+              # Remove prior Williams III favicon declarations from the earlier pass.
+              html = re.sub(
+                  r'\s*<link[^>]*(?:data-wiii-favicon="true"|favicon-(?:32|192)\.png|apple-touch-icon\.png)[^>]*>\s*',
+                  '\n',
+                  html,
+                  flags=re.I
+              )
+
+              rel32 = os.path.relpath("assets/favicon-wiii-32.png", page.parent).replace(os.sep, "/")
+              rel64 = os.path.relpath("assets/favicon-wiii-64.png", page.parent).replace(os.sep, "/")
+              rel192 = os.path.relpath("assets/favicon-wiii-192.png", page.parent).replace(os.sep, "/")
+              relapple = os.path.relpath("assets/apple-touch-icon-wiii.png", page.parent).replace(os.sep, "/")
 
               tags = (
                   f'  <link data-wiii-favicon="true" rel="icon" type="image/png" sizes="32x32" href="{rel32}">\n'
+                  f'  <link rel="icon" type="image/png" sizes="64x64" href="{rel64}">\n'
                   f'  <link rel="icon" type="image/png" sizes="192x192" href="{rel192}">\n'
                   f'  <link rel="apple-touch-icon" sizes="180x180" href="{relapple}">\n'
               )
 
               if "</head>" in html:
                   html = html.replace("</head>", tags + "</head>", 1)
-              else:
-                  continue
-              page.write_text(html, encoding="utf-8")
+                  page.write_text(html, encoding="utf-8")
           PY
 
-      - name: Commit favicon installation
+      - name: Commit tightly-fitted favicon installation
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/favicon-32.png assets/favicon-192.png assets/apple-touch-icon.png '*.html' '**/*.html'
+          git add assets/favicon-wiii-32.png assets/favicon-wiii-64.png assets/favicon-wiii-192.png assets/apple-touch-icon-wiii.png '*.html' '**/*.html'
           if git diff --cached --quiet; then
             echo "No favicon changes needed."
             exit 0
           fi
-          git commit -m "Install Williams III favicon sitewide"
+          git commit -m "Tighten Williams III favicon fit sitewide"
           git push
