@@ -1,0 +1,63 @@
+/* Williams III — Operating Philosophy */
+.principles-page{background:#fff}
+.op-hero,.op-intro,.op-framework,.op-pillars,.op-capabilities,.op-evidence,.op-close{width:min(1120px,calc(100% - 112px));margin:0 auto}
+.op-kicker{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.op-hero{padding:82px 0 66px;border-bottom:1px solid var(--line)}
+.op-hero h1{font:400 clamp(54px,6.4vw,86px)/.96 Georgia,"Times New Roman",serif;letter-spacing:-.05em;color:var(--navy);max-width:900px;margin:0}
+.op-lead{font-size:19px;line-height:1.68;color:var(--muted);max-width:840px;margin:30px 0 0}
+.op-intro{padding:66px 0 58px;display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:end}
+.op-intro h2,.op-section-head h2,.op-capability-intro h2,.op-evidence h2,.op-close h2{font:400 clamp(38px,4.5vw,58px)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:var(--navy);margin:0}
+.op-intro>p,.op-section-head>p,.op-capability-intro>p,.op-evidence-main>p,.op-close>p{font-size:16px;line-height:1.72;color:var(--muted);margin:0}
+.op-framework{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.op-framework article{padding:34px 32px 38px;border-right:1px solid var(--line);min-height:310px}
+.op-framework article:last-child{border-right:0}
+.op-framework span,.op-capability-list span{font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--gold)}
+.op-framework h3{font:400 31px/1.04 Georgia,"Times New Roman",serif;color:var(--navy);margin:42px 0 18px}
+.op-framework p{font-size:14px;line-height:1.68;color:var(--muted);margin:0}
+.op-pillars{padding:92px 0 96px}
+.op-section-head{display:grid;grid-template-columns:1fr .75fr;gap:72px;align-items:end;margin-bottom:44px}
+.op-section-head>p{max-width:430px}
+.op-pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.op-pillar-grid article{min-height:280px;padding:34px;display:flex;flex-direction:column;justify-content:flex-end}
+.op-pillar-grid h3{font:400 34px/1.04 Georgia,"Times New Roman",serif;margin:0 0 18px}
+.op-pillar-grid p{font-size:14px;line-height:1.6;margin:0;max-width:28ch}
+.op-pillar-grid .profitability{background:var(--navy);color:#fff}.op-pillar-grid .profitability h3{color:#fff}.op-pillar-grid .profitability p{color:#ffffffc4}
+.op-pillar-grid .durability{background:#D9ECF8;color:var(--navy)}.op-pillar-grid .durability h3{color:var(--navy)}
+.op-pillar-grid .utility{background:#F7F0D8;color:var(--navy)}.op-pillar-grid .utility h3{color:var(--navy)}
+.op-capabilities{padding:84px 0 96px;border-top:1px solid var(--line);display:grid;grid-template-columns:.8fr 1.2fr;gap:82px}
+.op-capability-intro{position:sticky;top:88px;align-self:start}
+.op-capability-intro>p{margin-top:24px}
+.op-capability-list{border-top:1px solid var(--line)}
+.op-capability-list article{display:grid;grid-template-columns:52px 220px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:start}
+.op-capability-list h3{font-size:20px;line-height:1.25;color:var(--navy);margin:0}
+.op-capability-list p{font-size:14px;line-height:1.6;color:var(--muted);margin:0}
+.op-evidence{padding:88px 0 92px;border-top:1px solid var(--line)}
+.op-evidence-main{display:grid;grid-template-columns:.8fr 1.2fr;column-gap:72px;align-items:start}
+.op-evidence-main .op-kicker{grid-column:1}
+.op-evidence-main h2{grid-column:1}
+.op-evidence-main>p{grid-column:2;grid-row:1 / span 2;padding-top:28px}
+.op-evidence-rule{margin-top:54px;display:flex;align-items:center;gap:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0;color:var(--navy);font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.op-evidence-rule i{height:1px;background:#cfd3d4;flex:1}
+.op-close{padding:92px 0 108px;border-top:1px solid var(--line)}
+.op-close h2{max-width:880px}
+.op-close>p{max-width:720px;margin-top:24px}
+@media(max-width:900px){
+  .op-hero,.op-intro,.op-framework,.op-pillars,.op-capabilities,.op-evidence,.op-close{width:min(100% - 44px,1120px)}
+  .op-intro,.op-section-head,.op-capabilities,.op-evidence-main{grid-template-columns:1fr;gap:34px}
+  .op-framework{grid-template-columns:1fr}
+  .op-framework article{border-right:0;border-bottom:1px solid var(--line);min-height:0}
+  .op-framework article:last-child{border-bottom:0}
+  .op-pillar-grid{grid-template-columns:1fr}
+  .op-pillar-grid article{min-height:230px}
+  .op-capability-intro{position:static}
+  .op-evidence-main .op-kicker,.op-evidence-main h2,.op-evidence-main>p{grid-column:auto;grid-row:auto}
+  .op-evidence-main>p{padding-top:0}
+}
+@media(max-width:620px){
+  .op-hero{padding:50px 0 44px}.op-hero h1{font-size:48px}.op-lead{font-size:16px}
+  .op-intro{padding:48px 0 44px}.op-framework article{padding:28px 8px 30px}.op-framework h3{margin-top:26px;font-size:28px}
+  .op-pillars{padding:64px 0 68px}.op-section-head{margin-bottom:30px}.op-pillar-grid article{padding:28px;min-height:210px}
+  .op-capabilities{padding:60px 0 70px}.op-capability-list article{grid-template-columns:42px 1fr;gap:14px}.op-capability-list p{grid-column:2}
+  .op-evidence{padding:62px 0 66px}.op-evidence-rule{gap:10px;font-size:9px;overflow:hidden}.op-evidence-rule i{min-width:18px}
+  .op-close{padding:68px 0 78px}
+}
