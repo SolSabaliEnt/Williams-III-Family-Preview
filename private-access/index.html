@@ -1,1 +1,99 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Private Access · Williams III</title><meta name="description" content="Private access for authorized Williams III family enterprise materials, governance resources, and confidential records."><link rel="stylesheet" href="../site.css"></head><body><aside class="rail"><a href="../"><img src="../assets/williams iii master mark.png" alt="Williams III"></a><a class="menu" href="#">EXPLORE</a><div class="caption">Williams III · Family Enterprise</div></aside><main class="main"><section class="private-access-head"><div class="eyebrow">Private Access</div><h1>A protected layer for the family enterprise.</h1><p>Private Access is reserved for authorized family members, stewards, advisors, and approved collaborators working with confidential Williams III materials.</p></section><section class="private-access-shell"><div class="private-access-mark"><img src="../assets/williams iii master mark.png" alt="Williams III"></div><div class="private-access-copy"><div class="eyebrow">Authorized access</div><h2>Confidential by design.</h2><p>Governance records, family materials, internal operating documents, and selected deal-room resources belong behind a controlled access layer rather than on the public web.</p><div class="private-access-actions"><a class="private-btn primary" href="../contact/?context=private-access">Request access</a><a class="private-btn secondary" href="../">Return to public site</a></div><p class="private-access-note">Access is granted by invitation and role. Public company and institutional information remains available throughout the main site.</p></div></section><section class="private-access-principles"><article><span>01</span><h3>Family & governance</h3><p>Private records, governance materials, continuity documents, and family-enterprise resources.</p></article><article><span>02</span><h3>Operating materials</h3><p>Internal venture, ownership, strategy, and stewardship materials intended for approved participants.</p></article><article><span>03</span><h3>Controlled sharing</h3><p>Access is limited to the people who need the information, with the public institutional record kept separate.</p></article></section><footer class="footer"><div class="footer-grid"><div><img src="../assets/williams iii master mark.png" alt="Williams III"><p>A family enterprise spanning proprietary ventures, intellectual property, strategic ownership interests, and long-term stewardship.</p></div><div><h4>Enterprise</h4><nav><a href="../family-office/">Family Office</a><a href="../family-holdings/">Family Holdings</a><a href="../companies/">Companies</a><a href="../digital-estate/">Digital Estate</a></nav></div><div><h4>Institution</h4><nav><a href="../story/">Our Story</a><a href="../leadership/">Leadership</a><a href="../principles/">Principles</a><a href="../contact/">Contact</a><a href="../private-access/" aria-current="page">Private Access</a></nav></div></div><div class="footer-bottom"><span>© <span data-year></span> Williams III</span><span>Family Holdings · Family Office</span></div></footer></main><script src="../site.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Private Access · Williams III</title>
+<meta name="description" content="Private access for authorized Williams III family enterprise materials, governance resources, and confidential records.">
+<link rel="stylesheet" href="../site.css?v=20260927">
+<link rel="stylesheet" href="./private-access.css?v=20260927">
+</head>
+<body class="private-page">
+<aside class="rail">
+  <a href="../"><img src="../assets/williams iii master mark.png" alt="Williams III"></a>
+  <a class="menu" href="#">EXPLORE</a>
+  <div class="caption">Williams III · Family Enterprise</div>
+</aside>
+
+<main class="main private-main">
+  <section class="pa-hero">
+    <div class="pa-kicker">Private Access</div>
+    <div class="pa-hero-grid">
+      <div>
+        <h1>A protected layer for the family enterprise.</h1>
+        <p>Private Access is reserved for authorized family members, stewards, advisors, and approved collaborators working with confidential Williams III materials.</p>
+      </div>
+      <div class="pa-rule-copy">Governance. Continuity. Ownership. Operating context.</div>
+    </div>
+  </section>
+
+  <section class="pa-access" id="private-access-app">
+    <div class="pa-brand-panel">
+      <img src="../assets/williams iii master mark.png" alt="Williams III">
+      <div>
+        <span>Williams III</span>
+        <strong>Private Enterprise Layer</strong>
+      </div>
+    </div>
+
+    <div class="pa-auth-panel" data-auth-view="signed-out">
+      <div class="pa-kicker">Authorized Access</div>
+      <h2>Enter the private layer.</h2>
+      <p class="pa-intro">Sign in to continue to family, governance, operating, and selected deal-room materials.</p>
+      <form class="pa-form" id="mock-auth-form">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required>
+        </label>
+        <label>
+          <span>Access code</span>
+          <input type="password" name="code" autocomplete="current-password" placeholder="••••••••" required>
+        </label>
+        <button type="submit" class="pa-button primary">Sign in</button>
+        <p class="pa-mock-note">Prototype access only. This interaction is mocked and does not protect confidential data.</p>
+      </form>
+      <div class="pa-auth-links">
+        <a href="../contact/?context=private-access">Request access</a>
+        <a href="../">Return to public site</a>
+      </div>
+    </div>
+
+    <div class="pa-auth-panel pa-dashboard" data-auth-view="signed-in" hidden>
+      <div class="pa-dashboard-head">
+        <div>
+          <div class="pa-kicker">Private Access</div>
+          <h2>Welcome to the private layer.</h2>
+          <p class="pa-intro" id="pa-user-line">Authorized session</p>
+        </div>
+        <button type="button" class="pa-button text" id="mock-signout">Sign out</button>
+      </div>
+      <div class="pa-resource-grid">
+        <article><span>01</span><h3>Family & Governance</h3><p>Continuity records, governance materials, family-enterprise documentation, and stewardship resources.</p><button type="button" disabled>Private library</button></article>
+        <article><span>02</span><h3>Ownership & Holdings</h3><p>Internal ownership context, selected portfolio records, and strategic holding materials.</p><button type="button" disabled>Ownership room</button></article>
+        <article><span>03</span><h3>Operating Materials</h3><p>Approved venture, operating, strategy, and institutional documents for authorized participants.</p><button type="button" disabled>Operating room</button></article>
+        <article><span>04</span><h3>Deal Room</h3><p>Controlled materials for specific approved reviews, counterparties, and advisory engagements.</p><button type="button" disabled>Deal room</button></article>
+      </div>
+      <p class="pa-mock-note">Resource controls are intentionally non-functional until real authentication and permissions are connected.</p>
+    </div>
+  </section>
+
+  <section class="pa-principles">
+    <article><span>01</span><h3>Private by default</h3><p>Confidential materials stay outside the public institutional record.</p></article>
+    <article><span>02</span><h3>Role-based context</h3><p>Access should reflect the person, relationship, and reason for entry.</p></article>
+    <article><span>03</span><h3>Controlled continuity</h3><p>Important records remain organized, durable, and available to the right people over time.</p></article>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><img src="../assets/williams iii master mark.png" alt="Williams III"><p>A family enterprise spanning proprietary ventures, intellectual property, strategic ownership interests, and long-term stewardship.</p></div>
+      <div><h4>Enterprise</h4><nav><a href="../family-office/">Family Office</a><a href="../family-holdings/">Family Holdings</a><a href="../companies/">Companies</a><a href="../digital-estate/">Digital Estate</a></nav></div>
+      <div><h4>Institution</h4><nav><a href="../story/">Our Story</a><a href="../leadership/">Leadership</a><a href="../principles/">Principles</a><a href="../contact/">Contact</a><a href="../private-access/" aria-current="page">Private Access</a></nav></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-year></span> Williams III</span><span>Family Holdings · Family Office</span></div>
+  </footer>
+</main>
+
+<script src="../site.js?v=20260927"></script>
+<script src="./private-access.js?v=20260927"></script>
+</body>
+</html>
