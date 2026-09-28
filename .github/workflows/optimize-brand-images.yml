@@ -1,0 +1,84 @@
+name: Optimize brand images
+
+on:
+  push:
+    paths:
+      - ".github/workflows/optimize-brand-images.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install WebP tools
+        run: sudo apt-get update && sudo apt-get install -y webp
+
+      - name: Build optimized brand images
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          convert_brand () {
+            src="$1"
+            dst="$2"
+            echo "Optimizing: $src -> $dst"
+            cwebp -quiet -q 82 -m 6 -resize 1200 675 "$src" -o "$dst"
+          }
+
+          convert_brand "assets/covre updated brand image.png" "assets/covre updated brand image.webp"
+          convert_brand "assets/pleiotaxy updated brand image.png" "assets/pleiotaxy updated brand image.webp"
+          convert_brand "assets/maatra updated brand image.png" "assets/maatra updated brand image.webp"
+          convert_brand "assets/re continuity updated brand image.png" "assets/re continuity updated brand image.webp"
+          convert_brand "assets/lot updated brand image.png" "assets/lot updated brand image.webp"
+          convert_brand "assets/relayed updated brand image.png" "assets/relayed updated brand image.webp"
+          convert_brand "assets/cleanr updated brand image.png" "assets/cleanr updated brand image.webp"
+          convert_brand "assets/docc updated brand image.png" "assets/docc updated brand image.webp"
+          convert_brand "assets/mtc updated brand image.png" "assets/mtc updated brand image.webp"
+          convert_brand "assets/re eat updated brand image.png" "assets/re eat updated brand image.webp"
+
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("index.html")
+          s = p.read_text()
+          names = [
+              "covre updated brand image",
+              "pleiotaxy updated brand image",
+              "maatra updated brand image",
+              "re continuity updated brand image",
+              "lot updated brand image",
+              "relayed updated brand image",
+              "cleanr updated brand image",
+              "docc updated brand image",
+              "mtc updated brand image",
+              "re eat updated brand image",
+          ]
+          for name in names:
+              s = s.replace(f"{name}.png", f"{name}.webp")
+          p.write_text(s)
+          PY
+
+      - name: Report sizes
+        shell: bash
+        run: |
+          echo "Optimized files:"
+          du -h assets/*"updated brand image.webp"
+
+      - name: Commit optimized assets
+        shell: bash
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/*"updated brand image.webp"
+          if git diff --cached --quiet; then
+            echo "No optimization changes to commit."
+            exit 0
+          fi
+          git commit -m "Optimize portfolio brand images for web"
+          git push
