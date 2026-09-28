@@ -254,3 +254,115 @@ body.menu-open{overflow:hidden}
   .principles-page .op-close{padding:52px 0 60px}
   .principles-page .op-close h2{font-size:40px}
 }
+
+/* --- Principles institutional density pass --- */
+.principles-page .op-hero{
+  padding:58px 0 44px;
+}
+.principles-page .op-hero h1{
+  max-width:820px;
+}
+.principles-page .op-lead{
+  max-width:760px;
+  margin-top:22px;
+}
+.principles-page .op-intro{
+  padding:42px 0 34px;
+  gap:56px;
+}
+.principles-page .op-framework{
+  margin-top:0;
+}
+.principles-page .op-framework article{
+  min-height:240px;
+  padding:26px 28px 30px;
+}
+.principles-page .op-framework h3{
+  margin-top:28px;
+  font-size:30px;
+}
+.principles-page .op-pillars{
+  padding:56px 0 62px;
+}
+.principles-page .op-section-head{
+  margin-bottom:28px;
+  gap:54px;
+}
+.principles-page .op-pillar-grid{
+  gap:10px;
+}
+.principles-page .op-pillar-grid article{
+  min-height:220px;
+  padding:28px;
+}
+.principles-page .op-pillar-grid h3{
+  font-size:33px;
+}
+.principles-page .op-capabilities{
+  padding:54px 0 62px;
+  gap:58px;
+}
+.principles-page .op-capability-intro h2{
+  font-size:clamp(38px,4vw,54px);
+}
+.principles-page .op-capability-list article{
+  grid-template-columns:38px 190px minmax(0,1fr);
+  gap:18px;
+  padding:18px 0;
+}
+.principles-page .op-capability-list h3{
+  font-size:18px;
+}
+.principles-page .op-capability-list p{
+  line-height:1.5;
+}
+.principles-page .op-evidence{
+  padding:56px 0 60px;
+}
+.principles-page .op-evidence-main{
+  column-gap:64px;
+}
+.principles-page .op-evidence-rule{
+  margin-top:34px;
+  padding:16px 0;
+}
+.principles-page .op-close{
+  padding:48px 0 58px;
+}
+.principles-page .op-close h2{
+  font-size:clamp(34px,3.6vw,48px);
+  line-height:1.02;
+  max-width:760px;
+}
+.principles-page .op-close>p{
+  margin-top:16px;
+  max-width:650px;
+}
+.principles-page .footer{
+  margin-top:0;
+}
+@media(max-width:900px){
+  .principles-page .op-hero{padding:46px 0 36px}
+  .principles-page .op-intro{padding:36px 0 30px}
+  .principles-page .op-framework article{min-height:0;padding:24px 8px}
+  .principles-page .op-pillars{padding:48px 0 52px}
+  .principles-page .op-capabilities{padding:46px 0 52px}
+  .principles-page .op-evidence{padding:46px 0 50px}
+  .principles-page .op-close{padding:42px 0 48px}
+}
+@media(max-width:620px){
+  .principles-page .op-hero h1{font-size:44px}
+  .principles-page .op-lead{margin-top:18px}
+  .principles-page .op-pillars{padding:42px 0 46px}
+  .principles-page .op-pillar-grid article{min-height:170px}
+  .principles-page .op-capability-list article{
+    grid-template-columns:32px 1fr;
+    padding:16px 0;
+  }
+  .principles-page .op-capability-list p{grid-column:2}
+  .principles-page .op-evidence-rule{
+    margin-top:28px;
+    padding:14px 0;
+  }
+  .principles-page .op-close h2{font-size:36px}
+}
