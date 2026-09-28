@@ -126,3 +126,95 @@ body.menu-open{overflow:hidden}
 .contact-note p{font-size:16px;line-height:1.72;color:var(--muted);max-width:760px}
 @media(max-width:900px){.private-access-head,.contact-head,.private-access-shell,.private-access-principles,.contact-grid,.contact-note{width:min(100% - 44px,1040px)}.private-access-shell{grid-template-columns:1fr;gap:36px}.private-access-mark{min-height:300px}.private-access-principles{grid-template-columns:1fr}.private-access-principles article{border-right:0;border-bottom:1px solid var(--line)}.private-access-principles article:last-child{border-bottom:0}.contact-grid{grid-template-columns:1fr}.contact-option{border-right:0}.contact-head,.private-access-head{padding-top:48px}}
 @media(max-width:560px){.private-access-head h1,.contact-head h1{font-size:42px}.private-access-shell{padding:42px 0 52px}.private-access-mark{min-height:240px;padding:40px}.private-access-actions{display:grid}.private-btn{width:100%}.contact-option{padding:28px 8px 32px}.contact-option h2{font-size:30px}}
+
+/* --- Principles / Operating Philosophy institutional layout --- */
+.principles-page{background:#fff}
+.principles-page .op-hero,
+.principles-page .op-intro,
+.principles-page .op-framework,
+.principles-page .op-pillars,
+.principles-page .op-capabilities,
+.principles-page .op-evidence,
+.principles-page .op-close{width:min(1120px,calc(100% - 112px));margin:0 auto}
+.principles-page .op-kicker{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.principles-page .op-hero{padding:86px 0 70px;border-bottom:1px solid var(--line)}
+.principles-page .op-hero h1{font:400 clamp(58px,6.7vw,90px)/.95 Georgia,"Times New Roman",serif;letter-spacing:-.055em;color:var(--navy);max-width:930px;margin:0}
+.principles-page .op-lead{font-size:19px;line-height:1.7;color:var(--muted);max-width:850px;margin:30px 0 0}
+.principles-page .op-intro{padding:72px 0 62px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.9fr);gap:86px;align-items:end}
+.principles-page .op-intro h2,
+.principles-page .op-section-head h2,
+.principles-page .op-capability-intro h2,
+.principles-page .op-evidence h2,
+.principles-page .op-close h2{font:400 clamp(40px,4.6vw,60px)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:var(--navy);margin:0}
+.principles-page .op-intro>p,
+.principles-page .op-section-head>p,
+.principles-page .op-capability-intro>p,
+.principles-page .op-evidence-main>p,
+.principles-page .op-close>p{font-size:16px;line-height:1.75;color:var(--muted);margin:0}
+.principles-page .op-framework{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-left:0;border-right:0}
+.principles-page .op-framework article{padding:36px 34px 42px;border-right:1px solid var(--line);min-height:320px;background:#fff}
+.principles-page .op-framework article:last-child{border-right:0}
+.principles-page .op-framework span,
+.principles-page .op-capability-list span{font-size:10px;font-weight:800;letter-spacing:.13em;color:var(--gold)}
+.principles-page .op-framework h3{font:400 32px/1.02 Georgia,"Times New Roman",serif;color:var(--navy);margin:48px 0 18px}
+.principles-page .op-framework p{font-size:14px;line-height:1.68;color:var(--muted);margin:0}
+.principles-page .op-pillars{padding:96px 0 100px}
+.principles-page .op-section-head{display:grid;grid-template-columns:1fr .72fr;gap:78px;align-items:end;margin-bottom:46px}
+.principles-page .op-section-head>p{max-width:430px}
+.principles-page .op-pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.principles-page .op-pillar-grid article{min-height:300px;padding:36px;display:flex;flex-direction:column;justify-content:flex-end}
+.principles-page .op-pillar-grid h3{font:400 36px/1.02 Georgia,"Times New Roman",serif;margin:0 0 18px}
+.principles-page .op-pillar-grid p{font-size:14px;line-height:1.62;margin:0;max-width:29ch}
+.principles-page .op-pillar-grid .profitability{background:var(--navy);color:#fff}
+.principles-page .op-pillar-grid .profitability h3{color:#fff}
+.principles-page .op-pillar-grid .profitability p{color:rgba(255,255,255,.78)}
+.principles-page .op-pillar-grid .durability{background:#cfe7f6;color:var(--navy)}
+.principles-page .op-pillar-grid .durability h3{color:var(--navy)}
+.principles-page .op-pillar-grid .utility{background:#f3ecd2;color:var(--navy)}
+.principles-page .op-pillar-grid .utility h3{color:var(--navy)}
+.principles-page .op-capabilities{padding:92px 0 100px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);gap:92px}
+.principles-page .op-capability-intro{align-self:start}
+.principles-page .op-capability-intro>p{margin-top:26px}
+.principles-page .op-capability-list{border-top:1px solid var(--line)}
+.principles-page .op-capability-list article{display:grid;grid-template-columns:48px 220px minmax(0,1fr);gap:22px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
+.principles-page .op-capability-list h3{font-size:20px;line-height:1.25;color:var(--navy);margin:0}
+.principles-page .op-capability-list p{font-size:14px;line-height:1.6;color:var(--muted);margin:0}
+.principles-page .op-evidence{padding:92px 0 96px;border-top:1px solid var(--line)}
+.principles-page .op-evidence-main{display:grid;grid-template-columns:.78fr 1.22fr;column-gap:92px;align-items:start}
+.principles-page .op-evidence-main .op-kicker{grid-column:1}
+.principles-page .op-evidence-main h2{grid-column:1}
+.principles-page .op-evidence-main>p{grid-column:2;grid-row:1 / span 2;padding-top:30px}
+.principles-page .op-evidence-rule{margin-top:58px;display:flex;align-items:center;gap:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:25px 0;color:var(--navy);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.principles-page .op-evidence-rule i{height:1px;background:#cfd3d4;flex:1}
+.principles-page .op-close{padding:98px 0 114px;border-top:1px solid var(--line)}
+.principles-page .op-close h2{max-width:900px}
+.principles-page .op-close>p{max-width:720px;margin-top:26px}
+@media(max-width:900px){
+  .principles-page .op-hero,.principles-page .op-intro,.principles-page .op-framework,.principles-page .op-pillars,.principles-page .op-capabilities,.principles-page .op-evidence,.principles-page .op-close{width:min(100% - 44px,1120px)}
+  .principles-page .op-intro,.principles-page .op-section-head,.principles-page .op-capabilities,.principles-page .op-evidence-main{grid-template-columns:1fr;gap:34px}
+  .principles-page .op-framework{grid-template-columns:1fr}
+  .principles-page .op-framework article{border-right:0;border-bottom:1px solid var(--line);min-height:0}
+  .principles-page .op-framework article:last-child{border-bottom:0}
+  .principles-page .op-pillar-grid{grid-template-columns:1fr}
+  .principles-page .op-pillar-grid article{min-height:220px}
+  .principles-page .op-evidence-main .op-kicker,.principles-page .op-evidence-main h2,.principles-page .op-evidence-main>p{grid-column:auto;grid-row:auto}
+  .principles-page .op-evidence-main>p{padding-top:0}
+}
+@media(max-width:620px){
+  .principles-page .op-hero{padding:50px 0 46px}
+  .principles-page .op-hero h1{font-size:48px}
+  .principles-page .op-lead{font-size:16px}
+  .principles-page .op-intro{padding:48px 0 44px}
+  .principles-page .op-framework article{padding:28px 8px 30px}
+  .principles-page .op-framework h3{margin-top:26px;font-size:28px}
+  .principles-page .op-pillars{padding:64px 0 68px}
+  .principles-page .op-section-head{margin-bottom:30px}
+  .principles-page .op-pillar-grid article{padding:28px;min-height:205px}
+  .principles-page .op-capabilities{padding:60px 0 70px}
+  .principles-page .op-capability-list article{grid-template-columns:38px 1fr;gap:14px}
+  .principles-page .op-capability-list p{grid-column:2}
+  .principles-page .op-evidence{padding:62px 0 66px}
+  .principles-page .op-evidence-rule{gap:9px;font-size:8px;overflow:hidden}
+  .principles-page .op-evidence-rule i{min-width:14px}
+  .principles-page .op-close{padding:68px 0 78px}
+}
