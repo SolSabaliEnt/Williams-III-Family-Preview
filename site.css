@@ -455,3 +455,23 @@ body.menu-open{overflow:hidden}
   .company-continuation-actions{display:grid;grid-template-columns:1fr}
   .company-next-link,.company-all-link{width:100%}
 }
+
+/* --- Family Holdings shareholder letter feature --- */
+.holdings-letter{width:min(1080px,calc(100% - 96px));margin:0 auto;padding:58px 0 62px;border-bottom:1px solid var(--line);text-align:center}
+.holdings-letter-inner{max-width:900px;margin:0 auto}
+.holdings-letter .eyebrow{color:var(--blue);margin-bottom:18px}
+.holdings-letter h2{margin:0;color:var(--blue);font:800 clamp(38px,4.7vw,58px)/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;letter-spacing:-.045em;text-transform:uppercase}
+.holdings-letter blockquote{margin:28px auto 0;max-width:850px;color:var(--navy);font:400 clamp(20px,2vw,28px)/1.45 Georgia,"Times New Roman",serif}
+.holdings-letter-link{display:inline-flex;align-items:center;gap:9px;margin-top:30px;padding-bottom:8px;border-bottom:1px solid #cfd6dc;color:var(--navy);font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.holdings-letter-link:hover{color:var(--blue);border-color:var(--blue)}
+.shareholder-letter-page{width:min(900px,calc(100% - 96px));margin:0 auto;padding:70px 0 94px}
+.shareholder-letter-page .eyebrow{color:var(--blue)}
+.shareholder-letter-page h1{font:800 clamp(46px,5.4vw,70px)/.98 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;letter-spacing:-.05em;color:var(--navy);margin:0 0 30px}
+.shareholder-letter-page .letter-date{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#8a8d90;margin-bottom:36px}
+.shareholder-letter-page .letter-body{max-width:760px}
+.shareholder-letter-page .letter-body p{font:400 17px/1.8 Georgia,"Times New Roman",serif;color:#3f464b;margin:0 0 22px}
+.shareholder-letter-page .letter-signoff{margin-top:42px;padding-top:24px;border-top:1px solid var(--line);color:var(--navy)}
+.shareholder-letter-page .letter-signoff strong{display:block;font-size:18px;margin-bottom:5px}
+.shareholder-letter-page .letter-signoff span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a8d90}
+@media(max-width:900px){.holdings-letter,.shareholder-letter-page{width:min(100% - 44px,1080px)}}
+@media(max-width:560px){.holdings-letter{padding:46px 0 50px}.holdings-letter h2{font-size:36px}.holdings-letter blockquote{font-size:20px;line-height:1.5}.shareholder-letter-page{padding:48px 0 66px}.shareholder-letter-page h1{font-size:42px}.shareholder-letter-page .letter-body p{font-size:16px;line-height:1.72}}
