@@ -508,3 +508,6 @@ body.menu-open{overflow:hidden}
 @media(max-width:900px){
   .story-photo{max-width:440px}
 }
+
+/* Text wordmark for portfolio cards without a local logo asset */
+.card-wordmark{height:64px;max-width:145px;display:flex;align-items:center;margin-bottom:24px;font:700 16px/1.05 Georgia,"Times New Roman",serif;letter-spacing:.02em;color:var(--navy)}
