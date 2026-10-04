@@ -475,3 +475,7 @@ body.menu-open{overflow:hidden}
 .shareholder-letter-page .letter-signoff span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a8d90}
 @media(max-width:900px){.holdings-letter,.shareholder-letter-page{width:min(100% - 44px,1080px)}}
 @media(max-width:560px){.holdings-letter{padding:46px 0 50px}.holdings-letter h2{font-size:36px}.holdings-letter blockquote{font-size:20px;line-height:1.5}.shareholder-letter-page{padding:48px 0 66px}.shareholder-letter-page h1{font-size:42px}.shareholder-letter-page .letter-body p{font-size:16px;line-height:1.72}}
+
+/* --- RWIII portrait edge-to-edge treatment --- */
+.story-photo,.leadership-portrait{padding:0;background:transparent}
+.story-photo img,.leadership-portrait img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;filter:none}
