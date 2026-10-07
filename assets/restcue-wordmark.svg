@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 260" role="img" aria-labelledby="title">
+<title id="title">RESTCUE — Where you stop, we start.</title>
+<defs><linearGradient id="g" x1="20" y1="220" x2="240" y2="30"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#22D3A6"/></linearGradient></defs>
+<g transform="translate(18 18) scale(.86)"><path fill="url(#g)" d="M46 218 78 38h83c42 0 69 23 69 60 0 30-18 50-48 59l42 61h-53l-36-54h-30l-10 54H46Zm69-96h36c17 0 28-8 28-22 0-12-9-20-25-20h-31l-8 42Z"/><path fill="#0B1F3B" d="M145 88c-15 0-27 12-27 27 0 22 27 48 27 48s27-26 27-48c0-15-12-27-27-27Zm0 37a10 10 0 1 1 0-20 10 10 0 0 1 0 20Z"/><path d="M58 211c25-57 50-88 83-110" fill="none" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round" opacity=".9"/></g>
+<text x="250" y="132" font-family="Inter,Arial,sans-serif" font-size="112" font-weight="800" letter-spacing="-4" fill="#0B1F3B">REST</text>
+<text x="535" y="132" font-family="Inter,Arial,sans-serif" font-size="112" font-weight="800" letter-spacing="-4" fill="#22D3A6">CUE</text>
+<text x="258" y="185" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="700" letter-spacing="7" fill="#475569">WHERE YOU STOP, WE START.</text>
+</svg>
