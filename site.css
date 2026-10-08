@@ -511,3 +511,7 @@ body.menu-open{overflow:hidden}
 
 /* Text wordmark for portfolio cards without a local logo asset */
 .card-wordmark{height:64px;max-width:145px;display:flex;align-items:center;margin-bottom:24px;font:700 16px/1.05 Georgia,"Times New Roman",serif;letter-spacing:.02em;color:var(--navy)}
+
+/* Show the entire approved Own My Purpose 16:9 brand image without cropping */
+.hero-media.brand-hero.omp-brand-image{height:auto;min-height:0;max-width:1080px;aspect-ratio:16/9;background:#101012}
+.hero-media.brand-hero.omp-brand-image img{width:100%;height:100%;object-fit:contain;object-position:center center}
