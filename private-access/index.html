@@ -43,44 +43,14 @@
       </div>
     </div>
 
-    <div class="pa-auth-panel" data-auth-view="signed-out">
-      <div class="pa-kicker">Authorized Access</div>
+    <div class="pa-auth-panel">
+      <div class="pa-kicker">By Invitation</div>
       <h2>Enter the private layer.</h2>
-      <p class="pa-intro">Sign in to continue to family, governance, operating, and selected deal-room materials.</p>
-      <form class="pa-form" id="mock-auth-form">
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required>
-        </label>
-        <label>
-          <span>Access code</span>
-          <input type="password" name="code" autocomplete="current-password" placeholder="••••••••" required>
-        </label>
-        <button type="submit" class="pa-button primary">Sign in</button>
-        <p class="pa-mock-note">Prototype access only. This interaction is mocked and does not protect confidential data.</p>
-      </form>
+      <p class="pa-intro">Private materials are reserved for approved family members, advisors, and collaborators. Access is arranged individually through Williams III Family Enterprises.</p>
+      <a class="pa-button primary pa-request-button" href="../contact/?context=private-access">Request Access <span aria-hidden="true">→</span></a>
       <div class="pa-auth-links">
-        <a href="../contact/?context=private-access">Request access</a>
         <a href="../">Return to public site</a>
       </div>
-    </div>
-
-    <div class="pa-auth-panel pa-dashboard" data-auth-view="signed-in" hidden>
-      <div class="pa-dashboard-head">
-        <div>
-          <div class="pa-kicker">Private Access</div>
-          <h2>Welcome to the private layer.</h2>
-          <p class="pa-intro" id="pa-user-line">Authorized session</p>
-        </div>
-        <button type="button" class="pa-button text" id="mock-signout">Sign out</button>
-      </div>
-      <div class="pa-resource-grid">
-        <article><span>01</span><h3>Family & Governance</h3><p>Continuity records, governance materials, family-enterprise documentation, and stewardship resources.</p><button type="button" disabled>Private library</button></article>
-        <article><span>02</span><h3>Ownership & Holdings</h3><p>Internal ownership context, selected portfolio records, and strategic holding materials.</p><button type="button" disabled>Ownership room</button></article>
-        <article><span>03</span><h3>Operating Materials</h3><p>Approved venture, operating, strategy, and institutional documents for authorized participants.</p><button type="button" disabled>Operating room</button></article>
-        <article><span>04</span><h3>Deal Room</h3><p>Controlled materials for specific approved reviews, counterparties, and advisory engagements.</p><button type="button" disabled>Deal room</button></article>
-      </div>
-      <p class="pa-mock-note">Resource controls are intentionally non-functional until real authentication and permissions are connected.</p>
     </div>
   </section>
 
@@ -101,6 +71,6 @@
 </main>
 
 <script src="../site.js?v=20260927"></script>
-<script src="./private-access.js?v=20260927"></script>
+
 </body>
 </html>
