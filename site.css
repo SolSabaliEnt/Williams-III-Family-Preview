@@ -87,9 +87,11 @@
 .explore-secondary a{font-size:clamp(20px,2vw,30px);line-height:1.35}
 .explore-primary a:hover,.explore-secondary a:hover{color:#74C3EF}
 body.menu-open{overflow:hidden}
-.brand-hero{height:auto;min-height:420px;background:#f4f4f2}
-.hero-media.brand-hero img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;display:block}
-@media(max-width:900px){.explore-overlay{inset:68px 0 0 0}.explore-inner{grid-template-columns:1fr;gap:34px;padding:46px 28px}.brand-hero{min-height:300px}}
+/* Brand illustrations should retain their full native aspect ratios on every viewport. */
+.brand-hero{height:auto;min-height:0;background:#f4f4f2}
+.hero-media.brand-hero{display:block;height:auto;min-height:0;overflow:visible}
+.hero-media.brand-hero img{display:block;width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain;object-position:center center}
+@media(max-width:900px){.explore-overlay{inset:68px 0 0 0}.explore-inner{grid-template-columns:1fr;gap:34px;padding:46px 28px}.brand-hero{min-height:0}}
 
 .explore-overlay .explore-close{display:none!important}
 
@@ -511,3 +513,7 @@ body.menu-open{overflow:hidden}
 
 /* Text wordmark for portfolio cards without a local logo asset */
 .card-wordmark{height:64px;max-width:145px;display:flex;align-items:center;margin-bottom:24px;font:700 16px/1.05 Georgia,"Times New Roman",serif;letter-spacing:.02em;color:var(--navy)}
+
+/* The Own My Purpose artwork follows the same non-cropping rules. */
+.hero-media.brand-hero.omp-brand-image{height:auto;min-height:0;max-width:880px;aspect-ratio:auto;background:#101012}
+.hero-media.brand-hero.omp-brand-image img{width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain;object-position:center center}
