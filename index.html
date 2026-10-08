@@ -60,6 +60,16 @@
 body.menu-open{overflow:hidden}
 @media(max-width:980px){.home-explore-overlay{inset:68px 0 0 0}.home-explore-inner{grid-template-columns:1fr;gap:34px;padding:46px 28px}}@media(max-width:640px){.home-explore-overlay{inset:64px 0 0 0}}
 
+
+/* A direct Williams III enterprise, outside the company portfolio */
+.direct-family-enterprise{background:#fff;border-bottom:1px solid #DAD8D3;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr);align-items:center;gap:clamp(30px,5vw,76px)}
+.direct-family-enterprise .kicker{color:var(--gold);margin-bottom:14px}
+.direct-family-enterprise h2{font:400 clamp(37px,4.9vw,67px)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:var(--navy);margin:0 0 15px}
+.direct-family-enterprise p{font-size:16px;line-height:1.68;color:#5F6461;max-width:550px;margin:0}
+.direct-family-enterprise .direct-link{display:inline-flex;margin-top:24px;font-size:11px;text-transform:uppercase;font-weight:800;letter-spacing:.14em;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:9px}
+.direct-family-enterprise .direct-mark{display:flex;align-items:center;justify-content:center;min-height:185px;background:#F8F5EF;border:1px solid #EAE4DA;padding:25px}
+.direct-family-enterprise .direct-mark img{width:min(240px,92%);max-height:170px;object-fit:contain}
+@media(max-width:720px){.direct-family-enterprise{grid-template-columns:1fr;gap:28px}.direct-family-enterprise h2{font-size:clamp(36px,9vw,51px)}.direct-family-enterprise .direct-mark{min-height:150px}}
 </style>
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-wiii-64.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-wiii-192.png">
@@ -80,6 +90,7 @@ body.menu-open{overflow:hidden}
   <div class="home-explore-inner">
     <nav class="home-explore-primary">
       <a href="./">Williams III</a>
+      <a href="own-my-purpose/">Own My Purpose</a>
       <a href="family-office/">Family Office</a>
       <a href="family-holdings/">Family Holdings</a>
       <a href="companies/">Companies</a>
@@ -108,6 +119,17 @@ body.menu-open{overflow:hidden}
       </div>
     </div>
     <div class="scroll">Scroll to discover</div>
+  </section>
+
+
+  <section class="section direct-family-enterprise" aria-labelledby="direct-family-enterprise-title">
+    <div class="direct-enterprise-copy">
+      <div class="kicker">Williams III Family · Direct Enterprise</div>
+      <h2 id="direct-family-enterprise-title">Own My Purpose</h2>
+      <p>Business systems and custom software developed as a direct family enterprise, distinct from our Family Office and Family Holdings portfolios.</p>
+      <a class="direct-link" href="own-my-purpose/">Explore Own My Purpose →</a>
+    </div>
+    <a class="direct-mark" href="own-my-purpose/" aria-label="Explore Own My Purpose"><img src="assets/own-my-purpose-logo.png" alt="Own My Purpose logo" loading="lazy"></a>
   </section>
 
   <section id="enterprise" class="section intro">
@@ -189,7 +211,7 @@ body.menu-open{overflow:hidden}
         <div class="footer-brand"><img class="footer-mark" id="masterLogoFooter" src="assets/williams iii master mark.png" alt="Williams III"></div>
         <p>A family enterprise spanning proprietary ventures, intellectual property, strategic ownership interests, and long-term stewardship.</p>
       </div>
-      <div><h5>Enterprise</h5><div class="footer-nav"><a href="family-office/">Family Office</a><a href="family-holdings/">Family Holdings</a><a href="companies/">Companies</a><a href="digital-estate/">Digital Estate</a></div></div>
+      <div><h5>Enterprise</h5><div class="footer-nav"><a href="own-my-purpose/">Own My Purpose</a><a href="family-office/">Family Office</a><a href="family-holdings/">Family Holdings</a><a href="companies/">Companies</a><a href="digital-estate/">Digital Estate</a></div></div>
       <div><h5>Institution</h5><div class="footer-nav"><a href="story/">Our Story</a><a href="leadership/">Leadership</a><a href="principles/">Principles</a><a href="contact/">Contact</a><a href="private-access/">Private Access</a></div></div>
     </div>
     <div class="footer-bottom"><span>© <span id="year"></span> Williams III Family Enterprises LLC. All rights reserved.</span><span>Family Holdings · Family Office</span><span>30 N Gould St · Ste R · Sheridan, WY 82801</span></div>
@@ -213,7 +235,6 @@ const companies=[
 {name:"LOT",group:"Family Office",sector:"Property Operations",relationship:"Family Owned",slug:"lot",sourceLogo:"Lot Logo Official.png",sourceHero:"lot updated brand image.webp",description:"Property-care operations that connect the property, the worker, the work record, and proof of completion."},
 {name:"RELAYED",group:"Family Office",sector:"Freight Communication",relationship:"Family Owned",slug:"relayed",sourceLogo:"Relayed logo.png",sourceHero:"relayed updated brand image.webp",description:"A calm freight-status communication layer that keeps stakeholders informed without unnecessary calls."},
 {name:"RESTCUE",group:"Family Office",sector:"Mobility / Roadside Technology",relationship:"Family Owned",slug:"restcue",sourceLogo:"restcue-wordmark.svg",sourceHero:"restcue updated brand image.webp",description:"A roadside-assistance orchestration platform connecting stranded motorists, verified roadside professionals, and dispatch operations through one coordinated digital network."},
-{name:"OWN MY PURPOSE",group:"Williams III Family",sector:"Business Systems & Custom Software",relationship:"Direct Family Enterprise",slug:"own-my-purpose",sourceLogo:"own-my-purpose-logo.png",sourceHero:"own-my-purpose-brand-scene.svg",description:"A direct Williams III Family enterprise building custom software, business systems, dashboards, and practical operational infrastructure."},
 {name:"SIMPLE P.A.W.S.",group:"Family Holdings",sector:"Pet Care Technology",relationship:"Portfolio Interest",slug:"simple-paws",sourceLogo:"simple-paws-logo-2-3i_kRcMB.png",sourceHero:"simple paws brand image.webp",description:"A proactive pet-care operating system that brings pet profiles, records, reminders, household coordination, and personalized guidance into one trusted place."},
 {name:"CLEANR",group:"Family Holdings",sector:"Home Services Technology",relationship:"Portfolio Interest",slug:"cleanr",sourceLogo:"cleanr-app@2x.png",sourceHero:"cleanr updated brand image.webp",description:"A relationship-centered recurring home cleaning platform built around continuity, trust, and dependable service."},
 {name:"DOCC",group:"Family Holdings",sector:"Financial Technology",relationship:"Portfolio Interest",slug:"docc",sourceLogo:"docc-horizontal.png",sourceHero:"docc updated brand image.webp",description:"Credit-card relationship management that organizes what you have, what needs attention, and what the system is handling."},

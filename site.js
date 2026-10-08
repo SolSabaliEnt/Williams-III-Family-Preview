@@ -34,7 +34,7 @@ document.querySelectorAll("[data-timeline]").forEach(function(root){
   overlay.setAttribute("role","dialog");
   overlay.setAttribute("aria-modal","true");
   overlay.setAttribute("aria-label","Explore Williams III");
-  overlay.innerHTML='<div class="explore-inner"><nav class="explore-primary"><a href="../../">Williams III</a><a href="../../family-office/">Family Office</a><a href="../../family-holdings/">Family Holdings</a><a href="../../companies/">Companies</a></nav><nav class="explore-secondary"><a href="../../story/">Our Story</a><a href="../../leadership/">Leadership</a><a href="../../principles/">Principles</a><a href="../../digital-estate/">Digital Estate</a><a href="../../contact/">Contact</a><a href="../../private-access/">Private Access</a></nav></div>';
+  overlay.innerHTML='<div class="explore-inner"><nav class="explore-primary"><a href="../../">Williams III</a><a href="../../own-my-purpose/">Own My Purpose</a><a href="../../family-office/">Family Office</a><a href="../../family-holdings/">Family Holdings</a><a href="../../companies/">Companies</a></nav><nav class="explore-secondary"><a href="../../story/">Our Story</a><a href="../../leadership/">Leadership</a><a href="../../principles/">Principles</a><a href="../../digital-estate/">Digital Estate</a><a href="../../contact/">Contact</a><a href="../../private-access/">Private Access</a></nav></div>';
   document.body.appendChild(overlay);
 
   function normalizeLinks(){
@@ -84,7 +84,6 @@ document.querySelectorAll("[data-timeline]").forEach(function(root){
     {slug:"lot",name:"LOT",relation:"Family Office · Family Owned"},
     {slug:"relayed",name:"Relayed",relation:"Family Office · Family Owned"},
     {slug:"restcue",name:"RESTCUE",relation:"Family Office · Family Owned"},
-    {slug:"own-my-purpose",name:"Own My Purpose",relation:"Williams III Family · Direct Family Enterprise"},
     {slug:"simple-paws",name:"Simple P.A.W.S.",relation:"Family Holdings · Portfolio Interest"},
     {slug:"cleanr",name:"Cleanr",relation:"Family Holdings · Portfolio Interest"},
     {slug:"docc",name:"DOCC",relation:"Family Holdings · Portfolio Interest"},
