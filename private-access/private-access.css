@@ -65,8 +65,3 @@
   .pa-principles article{border-right:0;border-bottom:1px solid var(--line)}
   .pa-principles article:last-child{border-bottom:0}
 }
-
-
-/* Invitation-only private layer: never simulate a login without real authentication. */
-.pa-request-button{display:inline-flex;align-items:center;justify-content:center;gap:18px;align-self:flex-start;min-height:50px;height:auto;line-height:1.2}
-.pa-request-button span{font-size:16px;line-height:1}
