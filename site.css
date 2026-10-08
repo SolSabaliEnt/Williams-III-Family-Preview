@@ -517,3 +517,18 @@ body.menu-open{overflow:hidden}
 /* The Own My Purpose artwork follows the same non-cropping rules. */
 .hero-media.brand-hero.omp-brand-image{height:auto;min-height:0;max-width:880px;aspect-ratio:auto;background:#101012}
 .hero-media.brand-hero.omp-brand-image img{width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain;object-position:center center}
+
+
+/* Universal institutional footer: matches the Williams III home page across every subpage. */
+.footer.sitewide-footer{width:100%;max-width:none;margin:0;background:#05172B;color:#fff;border-top:0;padding:72px clamp(28px,7vw,112px) 42px}
+.footer.sitewide-footer .footer-top{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:50px;align-items:start}
+.footer.sitewide-footer .footer-brand{min-height:100px;display:flex;align-items:center;margin-bottom:18px}
+.footer.sitewide-footer .footer-mark{display:block;width:min(220px,82%);height:auto;max-height:96px;object-fit:contain;object-position:left center;background:none;padding:0;filter:none}
+.footer.sitewide-footer p{margin:0;color:rgba(255,255,255,.60);max-width:480px;font-size:14px;line-height:1.65}
+.footer.sitewide-footer h5{margin:0 0 20px;color:#E3C98E;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.footer.sitewide-footer .footer-nav{display:grid;gap:12px;font-size:14px;line-height:1.35}
+.footer.sitewide-footer .footer-nav a{color:#fff;text-decoration:none;transition:color .2s}
+.footer.sitewide-footer .footer-nav a:hover,.footer.sitewide-footer .footer-nav a:focus-visible{color:#E3C98E}
+.footer.sitewide-footer .footer-bottom{width:100%;max-width:none;margin:70px 0 0;padding:22px 0 0;border-top:1px solid rgba(255,255,255,.15);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:rgba(255,255,255,.45);font-size:10px;letter-spacing:.08em;text-transform:uppercase;line-height:1.7}
+@media(max-width:980px){.footer.sitewide-footer .footer-top{grid-template-columns:1fr;gap:50px}}
+@media(max-width:640px){.footer.sitewide-footer{padding:64px 24px 34px}.footer.sitewide-footer .footer-bottom{margin-top:58px;display:grid;gap:18px}.footer.sitewide-footer .footer-brand{min-height:0}}
