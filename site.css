@@ -511,3 +511,20 @@ body.menu-open{overflow:hidden}
 
 /* Text wordmark for portfolio cards without a local logo asset */
 .card-wordmark{height:64px;max-width:145px;display:flex;align-items:center;margin-bottom:24px;font:700 16px/1.05 Georgia,"Times New Roman",serif;letter-spacing:.02em;color:var(--navy)}
+
+/* Direct enterprise and Ventures relationship in the company directory */
+.portfolio-hierarchy{padding-bottom:16px}
+.portfolio-hierarchy h2{max-width:660px}
+.portfolio-hierarchy-root{margin-top:34px;text-align:center;border:1px solid #D9DCD9;padding:18px 22px;color:var(--navy);font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;background:#F7F8F6}
+.portfolio-hierarchy-grid{position:relative;margin-top:26px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.portfolio-hierarchy-grid:before{content:"";position:absolute;top:-26px;left:50%;height:26px;border-left:1px solid #C7CCC7}
+.portfolio-hierarchy-node{border:1px solid #DCE0DC;padding:32px;background:#fff;min-height:270px;display:flex;flex-direction:column}
+.portfolio-hierarchy-node .eyebrow{color:#927B4E;margin-bottom:16px}
+.portfolio-hierarchy-node h3{font:400 34px/1.1 Georgia,"Times New Roman",serif;color:var(--navy);margin:0 0 15px}
+.portfolio-hierarchy-node p{font-size:14px;line-height:1.65;color:var(--muted);margin:0 0 22px}
+.portfolio-hierarchy-node a{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-top:auto}
+.portfolio-hierarchy-logo{width:180px;max-width:65%;height:95px;object-fit:contain;object-position:left center;margin:0 0 14px}
+.portfolio-hierarchy-child{border-left:2px solid #C2A06B;padding:4px 0 4px 18px;margin-bottom:18px}
+.portfolio-hierarchy-child small{font-size:10px;color:#8A744B;text-transform:uppercase;letter-spacing:.12em}
+.portfolio-hierarchy-child h4{font:600 23px/1.2 Inter,Arial,sans-serif;color:var(--navy);margin:7px 0 0}
+@media(max-width:700px){.portfolio-hierarchy-grid{grid-template-columns:1fr}.portfolio-hierarchy-node{min-height:0;padding:25px}.portfolio-hierarchy-grid:before{left:20px}}

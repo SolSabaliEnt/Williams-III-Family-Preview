@@ -84,7 +84,7 @@ document.querySelectorAll("[data-timeline]").forEach(function(root){
     {slug:"lot",name:"LOT",relation:"Family Office · Family Owned"},
     {slug:"relayed",name:"Relayed",relation:"Family Office · Family Owned"},
     {slug:"restcue",name:"RESTCUE",relation:"Family Office · Family Owned"},
-    {slug:"own-my-purpose",name:"Own My Purpose",relation:"Family Office · Family Owned"},
+    {slug:"own-my-purpose",name:"Own My Purpose",relation:"Williams III Family · Direct Family Enterprise"},
     {slug:"simple-paws",name:"Simple P.A.W.S.",relation:"Family Holdings · Portfolio Interest"},
     {slug:"cleanr",name:"Cleanr",relation:"Family Holdings · Portfolio Interest"},
     {slug:"docc",name:"DOCC",relation:"Family Holdings · Portfolio Interest"},
